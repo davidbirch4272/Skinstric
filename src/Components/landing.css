@@ -1,0 +1,34 @@
+.Main__Heading {
+    position: absolute;
+    width: 680px;
+    height: 240px;
+    top: 361px;
+    left: 620px;
+}
+
+.Heading__text {
+    font-weight: 300;
+    size: 128px;
+    line-height: 120px;
+    letter-spacing: -7%;
+   
+}
+
+.caption {
+    position: relative;
+    width: 316px;
+    height: 72px;
+    top: 862px;
+    left: 32px;
+}
+
+.caption__para {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    
+}
+
+
+
