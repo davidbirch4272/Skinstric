@@ -1,15 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Nav from "./Components/Nav";
 import Landing from "./Components/Landing"
+import Home from './Pages/Home';
+import Testing from './Pages/Testing';
 
 function App() {
   return (
     <Router>
       <Nav />
-      <Landing />
       <Routes>
+         <Route path="/" element={<Home />} /> 
+          <Route path="/Testing" element={<Testing />} />
         
       </Routes>
     </Router>

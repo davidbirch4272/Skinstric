@@ -1,0 +1,68 @@
+.diamond-stack  {
+    position: absolute;
+    top: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    position: relative;
+  }
+ 
+  .diamond.outer {
+    width: 420px;
+    height: 420px;
+    background-color: white;
+    transform: rotate(90deg);
+    position: relative;
+    z-index: 1;
+    border-style: dotted;
+    border-color: #A0A4AB;
+    animation: spin 85s infinite;
+
+  }
+
+   .diamond.inner {
+    width: 360px;
+    height: 360px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    animation: spin 85s infinite;
+  }
+
+   .diamond.inner--last {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(270deg);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    animation: rotate 85s infinite;
+  }
+
+  @keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
