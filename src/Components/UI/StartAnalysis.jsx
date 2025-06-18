@@ -1,4 +1,5 @@
 import React from "react";
+import startanalysis from './
 
 function StartAnalysis() {
   return (

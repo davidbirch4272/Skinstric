@@ -13,21 +13,24 @@
     height: 420px;
     background-color: white;
     transform: rotate(90deg);
-    position: relative;
+    position: absolute;
+    top: 99px;
+    left: 579px;
     z-index: 1;
-    border-style: dotted;
+    border-style: 2px dotted;
     border-color: #A0A4AB;
+    opacity: 30%;
     animation: spin 85s infinite;
 
   }
 
    .diamond.inner {
-    width: 360px;
-    height: 360px;
+    width: 682px;
+    height: 682px; 
     background-color: white;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 139px;
+    left: 619px;
     transform: translate(-50%, -50%) rotate(180deg);
     z-index: 2;
     display: flex;
@@ -36,16 +39,19 @@
     align-items: center;
     text-align: center;
     padding: 10px;
+    border-style: 2px dotted;
+    border-color: #A0A4AB;
+    opacity: 60%;
     animation: spin 85s infinite;
   }
 
    .diamond.inner--last {
-    width: 300px;
-    height: 300px;
+    width: 602px;
+    height: 602px;
     background-color: white;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 179px;
+    left: 659px;
     transform: translate(-50%, -50%) rotate(270deg);
     z-index: 2;
     display: flex;
@@ -53,6 +59,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-style: 2px dotted;
+    border-color: #A0A4AB;
     padding: 10px;
     animation: rotate 85s infinite;
   }
@@ -66,3 +74,4 @@
     transform: rotate(360deg);
   }
 }
+
