@@ -51,7 +51,7 @@ return () => clearTimeout(timer)
   };
 
  return (
-    <div className="page">
+    <div className="page__sa">
       <div className="para__wrapper">
         <p className="starter__para">TO START ANALYSIS</p>
       </div>

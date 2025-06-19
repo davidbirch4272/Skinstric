@@ -1,9 +1,3 @@
-body, html, #root {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
 .page {
   position: relative;
   width: 100%;
@@ -151,14 +145,60 @@ body, html, #root {
 }
 
 @media (max-width: 1046px) {
-  .split-layout {
+  
+   .split-layout {
     display: none;
   }
 
   .mobile-centered-layout {
-    display: block;
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+    height: 100%;
+    padding: 0px;
+  }
+
+  .diamond-stack  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    
+  }
+ 
+  .diamond.outer {
+    width: 420px;
+    height: 420px;
+    background-color: white;
+    transform: rotate(45deg);
+    position: relative;
+    z-index: 1;
+    border-style: dotted;
+    border-color: #A0A4AB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+
+   .diamond.inner {
+    width: 360px;
+    height: 360px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(270deg);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
+    box-sizing: border-box;
   }
 
   .center-text {
@@ -205,44 +245,6 @@ body, html, #root {
     margin-top: 10px;
   }
 
-  .diamond-stack  {
-    position: absolute;
-    top: 140px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    position: relative;
-  }
- 
-  .diamond.outer {
-    width: 420px;
-    height: 420px;
-    background-color: white;
-    transform: rotate(45deg);
-    position: relative;
-    z-index: 1;
-    border-style: dotted;
-    border-color: #A0A4AB;
-
-  }
-
-   .diamond.inner {
-    width: 360px;
-    height: 360px;
-    background-color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(270deg);
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-  }
 
   .landing__bottom--para {
     font-size: 16px;
@@ -254,7 +256,7 @@ body, html, #root {
 
 
 @media (max-width: 639px) {
-  .split-layout {
+  .half-container, .center-text.left, .center-text.right, .split-layout {
     display: none;
   }
 
