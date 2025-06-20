@@ -1,0 +1,21 @@
+.half-container-cf {
+  width: 10vw;
+  height: 8vw;
+  background-color: black;
+  color: white;
+}   
+
+.instruction-tp {
+    font: 16px;
+    margin:  0 0 48px;
+    padding: 0 0 0 16px;
+    color: #fcfcfc;
+
+}
+
+.border-tp {
+    margin: 16px 0 0;
+    padding: 8px 0 0;
+    color: #fcfcfc;
+    font-size: 2px;
+}

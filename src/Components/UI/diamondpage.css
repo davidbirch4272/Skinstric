@@ -42,7 +42,7 @@
   background-color: rgba(0, 0, 0, 0.1); 
 }
 
-.diamond {
+.dp_diamond {
   width: 450px;
   height: 450px;
   background-color: white;
@@ -51,7 +51,7 @@
   border: 1px solid #A0A4AB;
 }
 
-.diamond__arrow--wrapper{
+.dp_diamond__arrow--wrapper{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,62 +146,28 @@
 
 @media (max-width: 1046px) {
   
-   .split-layout {
-    display: none;
+   .split-layout, 
+   .half-container, 
+   .center-text.left,
+    .center-text.right,
+    .show-rect {
+    display: none !important;
+    background-color: transparent !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -999 !important;
   }
 
   .mobile-centered-layout {
-    display: flex;
-    justify-content: center;   
+    display: block;
+    position: relative;
     align-items: center;
     height: 100%;
     padding: 0px;
+    z-index: 999;
   }
 
-  .diamond-stack  {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 100%;
-    width: 100%;
-    
-  }
- 
-  .diamond.outer {
-    width: 420px;
-    height: 420px;
-    background-color: white;
-    transform: rotate(45deg);
-    position: relative;
-    z-index: 1;
-    border-style: dotted;
-    border-color: #A0A4AB;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-  }
-
-   .diamond.inner {
-    width: 360px;
-    height: 360px;
-    background-color: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(270deg);
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-  .center-text {
+.center-text {
   position: absolute;
   left: 40px;
   top: 60px;
@@ -237,6 +203,56 @@
     border: none;
   }
 
+ .arrow-diamond {
+    position: absolute;
+    top: 240px;
+    left: 140px;
+    transform: rotate(90deg);
+    margin-top: 10px;
+  }
+
+  .dp_diamond-stack  {
+    position: relative;
+    top: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+        
+  }
+ 
+  .dp_diamond.outer-dp {
+    width: 420px;
+    height: 420px;
+    background-color: white;
+    transform: rotate(45deg);
+    position: relative;
+    z-index: 1;
+    border-style: dotted;
+    border-color: #A0A4AB;
+   
+  }
+
+   .dp_diamond.inner-dp {
+    width: 360px;
+    height: 360px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(270deg);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    
+  }
+
+  
   .arrow-diamond {
     position: absolute;
     top: 240px;
@@ -256,14 +272,24 @@
 
 
 @media (max-width: 639px) {
-  .half-container, .center-text.left, .center-text.right, .split-layout {
-    display: none;
+   .split-layout, 
+   .half-container, 
+   .center-text.left,
+    .center-text.right,
+    .show-rect {
+    display: none !important;
+    background-color: transparent !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -999 !important;
   }
 
   .mobile-centered-layout {
     display: block;
+    position: relative;
     text-align: center;
     padding: 20px;
+    z-index: 999 !important;
   }
 
   .center-text {
@@ -301,6 +327,7 @@
     font-size: 9px;
     background-color: white;
     border: none;
+    cursor: pointer;
   }
 
   .arrow-diamond {
@@ -312,17 +339,18 @@
     margin-top: 10px;
   }
 
-  .diamond-stack  {
-    position: absolute;
+  .dp_diamond-stack  {
+    position: relative;
     top: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 300px;
-    position: relative;
+    
+    
   }
  
-  .diamond.outer {
+  .dp_diamond.outer-dp {
     width: 300px;
     height: 300px;
     background-color: white;
@@ -334,7 +362,7 @@
 
   }
 
-   .diamond.inner {
+   .dp_diamond.inner-dp {
     width: 220px;
     height: 220px;
     background-color: white;

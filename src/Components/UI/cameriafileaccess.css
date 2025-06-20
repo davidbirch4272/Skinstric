@@ -1,0 +1,156 @@
+.page__cf {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  background-color: white;
+  overflow: hidden;
+}
+
+.diamond-stack-cf-1 {
+  position: absolute;
+  top: 45%;
+  left: 23%;
+  width: 90vw;
+  max-width: 700px;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
+}
+
+.diamond-stack-cf-2 {
+  position: absolute;
+  top: 45%;
+  left: 75%;
+  width: 90vw;
+  max-width: 700px;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
+}
+
+.diamond-rotate-wrapper-cf {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.outer-rotate-cf {
+  animation: rotate 95s linear infinite;
+}
+.inner-rotate-cf {
+  animation: rotate 85s linear infinite;
+}
+.inner-last-rotate-cf {
+  animation: rotate 75s linear infinite;
+}
+
+.diamond-cf {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg); 
+  background-color: white;
+  border: 3px dotted #a0a4ab;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer-cf {
+  width: 320px;
+  height: 320px;
+  opacity: 0.3;
+  z-index: 1;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.inner-cf {
+  width: 286px;
+  height: 286px;
+  opacity: 0.6;
+  z-index: 2;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.inner--last-cf {
+  width: 252px;
+  height: 252px;
+  z-index: 3;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+}
+
+.diamond__content-cf {
+  position: absolute;
+  top: 130px;
+  left: 20px;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: black;
+  z-index: 1;
+}
+
+.counter-spin-cf {
+  animation: counter-rotate 75s linear infinite;
+}
+
+.diamond__arrow--wrapper-cf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.arrow__left-cf {
+  position: absolute;
+  left: 65px;
+  top: 595px;
+  transform: rotate(45deg);
+  height: 50px;
+}
+
+.left__diamond--para-cf {
+  position: absolute;
+  left: 120px;
+  top: 605px;
+  transform: rotate(360deg);
+}
+
+.preview__wrapper-cf {
+    flex-direction: column;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid gray; 
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  opacity: 99;
+}
+
+.preview-cf {
+    color: #1a1b1c;
+    margin:  0 0 4px;
+
+}
+
+.half-container-cf {
+  width: 10vw;
+  height: 8vw;
+    
+}
+
+.camera-cf {
+    position: absolute;
+    height: auto;
+    font-size: 120px;
+    border-radius: 200px;
+}
