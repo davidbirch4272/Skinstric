@@ -4,7 +4,7 @@ import nav from './nav.css';
 
 function Navigation() {
   return (
-    <nav>
+    <nav className="nav">
   
     <div className="row__nav">
       <div className="title__wrapper">

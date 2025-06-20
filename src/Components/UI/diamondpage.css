@@ -146,16 +146,9 @@
 
 @media (max-width: 1046px) {
   
-   .split-layout, 
-   .half-container, 
-   .center-text.left,
-    .center-text.right,
-    .show-rect {
-    display: none !important;
-    background-color: transparent !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    z-index: -999 !important;
+   .split-layout {
+    display: none 
+    
   }
 
   .mobile-centered-layout {
@@ -272,16 +265,8 @@
 
 
 @media (max-width: 639px) {
-   .split-layout, 
-   .half-container, 
-   .center-text.left,
-    .center-text.right,
-    .show-rect {
-    display: none !important;
-    background-color: transparent !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    z-index: -999 !important;
+   .split-layout {
+    display: none 
   }
 
   .mobile-centered-layout {

@@ -147,7 +147,7 @@ useEffect(() => {
                 setUserData({ name: "", city: "" });
                 setStep(1);
               }}>
-                <Link to="/">
+                <Link to="/access">
                   <image className="arrow__right-sa">
                     <DiamondWithRightArrow />
                   </image>

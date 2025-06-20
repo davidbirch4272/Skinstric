@@ -19,3 +19,187 @@
     color: #fcfcfc;
     font-size: 2px;
 }
+
+.camera-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 9999;
+}
+
+.camera-fullscreen {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.camera-overlay {
+  position: absolute;
+  top: 80%;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+}
+
+.small__diamond-a {
+    position:absolute;
+    top: 84%;
+    left: 23%;
+    width: 100%;
+    font-size:  1.0rem; 
+    color: white;
+
+
+}
+
+.small__diamond-b {
+     position:absolute;
+    top: 84%;
+    left: 43%;
+    width: 100%;
+    font-size:  1.0rem; 
+    color: white;
+    
+}
+
+.small__diamond-c {
+    position:absolute;
+    top: 84%;
+    left: 63%;
+    width: 100%;
+    font-size:  1.0rem; 
+    color: white;
+    
+}
+
+.instruction__a {
+    position:absolute;
+    top: 83%;
+    left: 25%;
+    width: 100%;
+    font-size:  12px;
+    margin-top: 8px; 
+    color: white;
+
+}
+
+.instruction__b {
+    position:absolute;
+    top: 83%;
+    left: 45%;
+    width: 100%;
+    font-size:  12px; 
+    margin-top: 8px;
+    color: white;
+
+}
+
+.instruction__c {
+    position:absolute;
+    top: 83%;
+    left: 65%;
+    width: 100%;
+    font-size:  12px; 
+    margin-top: 8px;
+    color: white;
+
+}
+
+.instruction__d {
+    position:absolute;
+    left: 88%;
+    top: 48%;
+    width: 100%;
+    font-size:  16px; 
+    margin-right: 8px;
+    color: white;
+
+}
+
+
+.photo-button {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+}
+
+.diamond__arrow--wrapper-tp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.arrow__left-tp {
+  position: absolute;
+  left: 65px;
+  top: 650px;
+  transform: rotate(45deg);
+  height: 50px;
+  color: white;
+}
+
+.left__diamond--para-tp {
+  position: absolute;
+  left: 120px;
+  top: 650px;
+  transform: rotate(360deg);
+  color: white;
+  
+}
+
+.permission-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; 
+  font-family: sans-serif;
+}
+
+.permission-text {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.permission-divider {
+  width: 60%;
+  height: 1px;
+  background-color: #aaa;
+  margin: 16px 0;
+}
+
+.permission-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.permission-buttons button {
+  padding: 10px 20px;
+  background-color: #222;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.permission-buttons button:hover {
+  background-color: #444;
+}

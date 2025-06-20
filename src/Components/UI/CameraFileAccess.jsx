@@ -1,18 +1,34 @@
+// App structure:
+// - Clicking the <MdCamera /> icon opens a full-screen camera overlay
+// - The camera overlay has:
+//    * An initial "permission prompt" styled overlay
+//    * A live camera feed with text instructions
+//    * A capture button and a bottom-positioned back button
+
 import React, { useState } from "react";
 import DiamondWithLeftArrow from "./DiamondWithLeftArrow";
 import { Link } from "react-router-dom";
-import './cameriafileaccess.css'
+import './cameriafileaccess.css';
 import { MdCamera } from "react-icons/md";
 import { ImFilePicture } from "react-icons/im";
 import TakePhoto from "./TakePhoto";
 
-
 function CameraFileAccess() {
-const [showCameraUI, setShowCameriaUI]  = useState(false);
+  const [showCameraUI, setShowCameraUI] = useState(false);
+  const [photoData, setPhotoData] = useState(null);
 
-const handleClick = () => {
-    setShowCameriaUI(true);
-};
+  const handleClick = () => {
+    setShowCameraUI(true);
+  };
+
+  if (showCameraUI) {
+    return (
+      <TakePhoto
+        onPhotoCaptured={(photo) => setPhotoData(photo)}
+        onDone={() => setShowCameraUI(false)}
+      />
+    );
+  }
 
   return (
     <div className="page__cf">
@@ -31,15 +47,14 @@ const handleClick = () => {
           <div className="diamond-cf inner--last-cf">
             <div className="diamond__content-cf counter-spin-cf">
               <div className="camera-cf">
-                <MdCamera onClick={handleClick}/>
+                <MdCamera onClick={handleClick} />
               </div>
-               { showCameraUI && <TakePhoto />}              
             </div>           
           </div>
         </div>
       </div>
 
-        <div className="diamond-stack-cf-2">
+      <div className="diamond-stack-cf-2">
         <div className="diamond-rotate-wrapper-cf outer-rotate-cf">
           <div className="diamond-cf outer-cf"></div>
         </div>
@@ -49,27 +64,26 @@ const handleClick = () => {
         <div className="diamond-rotate-wrapper-cf inner-last-rotate-cf">
           <div className="diamond-cf inner--last-cf">
             <div className="diamond__content-cf counter-spin-cf">
-             <div className="camera-cf">
+              <div className="camera-cf">
                 <ImFilePicture />
               </div>
-
-             
-             
             </div>           
           </div>
         </div>
       </div>
+
       <div className="preview__wrapper-cf">
         <p className="preview-cf">Preview</p>
-      <div className="half-container-cf"></div>
+        <div className="half-container-cf">
+          {photoData && (
+            <img
+              src={photoData}
+              alt="Captured Preview"
+              style={{ width: "100%", borderRadius: 8 }}
+            />
+          )}
+        </div>
       </div>
-    
-
-
-
-
-
-      
 
       <button className="diamond__arrow--wrapper-cf">
         <Link to="/">
@@ -80,7 +94,7 @@ const handleClick = () => {
         </Link>
       </button>
     </div>
-  )
+  );
 }
 
 export default CameraFileAccess;
