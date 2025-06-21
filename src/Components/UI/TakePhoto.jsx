@@ -1,52 +1,32 @@
-import React, { useState, useEffect, useRef } from "react";
-import './takephoto.css';
+import React, { useEffect, useRef } from "react";
+import "./takephoto.css";
 import { GoDiamond } from "react-icons/go";
 import DiamondWithLeftArrowWhite from "./DiamondWithLeftArrowWhite";
 import { Link } from "react-router-dom";
 import { MdCamera } from "react-icons/md";
-import Nav from '../Nav';
-import nav from '../nav.css';
 
-function TakePhoto({ onPhotoCaptured, onDone }) {
+function TakePhoto({ stream, onPhotoCaptured, onDone }) {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
-  const [step, setStep] = useState("permission"); 
-  const [stream, setStream] = useState(null);
 
-  const handleAllow = () => {
-    setStep("loading");
-    navigator.mediaDevices.getUserMedia({ video: true })
-       .then((stream) => {
-        console.log("Got Stream:", stream);
-        setStream(stream);
-        if (videoRef.current) {
-          videoRef.current.srcObject = stream;
-        } else {
-            console.error("videoRef.current is null")
-        }
-        setStep("camera");
-      })
-      .catch((err) => {
-        console.error("Camera access denied", err);
-        setStep("permission");
-        onDone(); 
-      });
-  };
+  useEffect(() => {
+    if (videoRef.current && stream) {
+      console.log("Attaching Stream in TakePhoto", stream);
+      videoRef.current.srcObject = stream;
+     
+    }
+  }, [stream]);
 
-  const handleDeny = () => {
-    onDone(); 
-  };
 
   const takePhoto = () => {
     const canvas = canvasRef.current;
     const video = videoRef.current;
 
     if (!canvas || !video || video.readyState < 2) {
-      console.warn("Camera not ready to capture photo.");
+      console.warn("Camera not ready.");
       return;
     }
 
-    
     canvas.width = video.videoWidth || 640;
     canvas.height = video.videoHeight || 480;
 
@@ -55,75 +35,63 @@ function TakePhoto({ onPhotoCaptured, onDone }) {
 
     const photo = canvas.toDataURL("image/png");
     onPhotoCaptured(photo);
-    setStep("done");
 
-    
     setTimeout(() => onDone(), 100);
   };
 
-  
-
-useEffect(() => {
-  if (videoRef.current && stream) {
-    videoRef.current.srcObject = stream;
-  }
-}, [stream]);
-
-  useEffect(() => {
-    return () => {
-      stream?.getTracks().forEach((t) => t.stop());
-    };
-  }, [stream]);
-
-  
-  if (step === "permission") {
-    return (
-      <div className="permission-overlay">
-        <p className="permission-text">AI would like to access your camera</p>
-        <div className="permission-divider"></div>
-        <div className="permission-buttons">
-          <button onClick={handleDeny}>Deny</button>
-          <button onClick={handleAllow}>Allow</button>
-        </div>
-      </div>
-    );
-  }
-
-  if (step === "loading") {
-    return (
-      <div className="loading-screen">
-        <p>Setting up camera...</p>
-      </div>
-    );
-  }
-
   return (
-<>
-<Nav />
-<div className="camera-view">
+    <div className="camera-view">
       <video
         ref={videoRef}
         autoPlay
         playsInline
+        muted
         className="camera-fullscreen"
-        onLoadedMetadata={() => videoRef.current?.play()}
-        />
-      <div className="camera-overlay">TO GET BETTER RESULTS MAKE SURE TO HAVE</div>
-      <image className="small__diamond-a"><GoDiamond /></image><p className="instruction__a">Neutral Expression</p>
-      <image className="small__diamond-b"><GoDiamond /></image><p className="instruction__b">Frontal Pose</p>
-      <image className="small__diamond-c"><GoDiamond /></image><p className="instruction__c">Adequate Lighting</p>
-      <button className="diamond__arrow--wrapper-tp"onClick={onDone}>
-        <Link to="/">
+        onLoadedMetadata={() => { 
+        if (videoRef.current) {
+            videoRef.current.play().catch((err) => {
+                console.error("Auto-play failed", err);
+            });
+        }
+
+        }}
+      />
+
+      <div className="camera-overlay">
+        TO GET BETTER RESULTS MAKE SURE TO HAVE
+      </div>
+
+      <div className="instruction-wrapper">
+        <div className="instruction-item">
+          <GoDiamond className="small__diamond-a" />
+          <p className="instruction__a">Neutral Expression</p>
+        </div>
+        <div className="instruction-item">
+          <GoDiamond className="small__diamond-b" />
+          <p className="instruction__b">Frontal Pose</p>
+        </div>
+        <div className="instruction-item">
+          <GoDiamond className="small__diamond-c" />
+          <p className="instruction__c">Adequate Lighting</p>
+        </div>
+      </div>
+
+      <button className="diamond__arrow--wrapper-tp" onClick={onDone}>
+        <Link to="/access">
           <div className="arrow__left-tp">
             <DiamondWithLeftArrowWhite />
           </div>
           <p className="left__diamond--para-tp">Back</p>
         </Link>
       </button>
-     <p className="instruction__d">Take Picture</p> <button className="photo-button" onClick={takePhoto}><MdCamera/></button>
+
+      <p className="instruction__d">Take Picture</p>
+      <button className="photo-button" onClick={takePhoto}>
+        <MdCamera />
+      </button>
+
       <canvas ref={canvasRef} style={{ display: "none" }} />
     </div>
-        </>
   );
 }
 

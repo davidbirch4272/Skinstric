@@ -3,7 +3,6 @@
   width: 100%;
   height: 90vh;
   background-color: white;
-  overflow: hidden;
 }
 
 .diamond-stack-cf-1 {
@@ -123,6 +122,57 @@
   transform: rotate(360deg);
 }
 
+.permission-popup {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, 30%);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  z-index: 1000; 
+  text-align: center;
+  width: 400px;
+  
+  
+}
+
+
+.permission-text {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.permission-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #aaa;
+  margin: 16px 0;
+}
+
+.permission-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.permission-buttons button {
+  padding: 10px 20px;
+  background-color: #222;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.permission-buttons button:hover {
+  background-color: #444;
+}
+
 .preview__wrapper-cf {
     flex-direction: column;
    display: flex;
@@ -153,4 +203,14 @@
     height: auto;
     font-size: 120px;
     border-radius: 200px;
+}
+
+.takephoto-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 90;
 }

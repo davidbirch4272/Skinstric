@@ -12,7 +12,9 @@ a:hover {
 }
 
 .nav {
-z-index: 1000;
+position: relative;
+z-index: 1100;
+background-color: white;
 }
 
 .container__nav {
