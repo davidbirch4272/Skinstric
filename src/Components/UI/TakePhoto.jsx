@@ -40,6 +40,8 @@ function TakePhoto({ stream, onPhotoCaptured, onDone }) {
   };
 
   return (
+    <div className="page__tp">
+
     <div className="camera-view">
       <video
         ref={videoRef}
@@ -48,18 +50,19 @@ function TakePhoto({ stream, onPhotoCaptured, onDone }) {
         muted
         className="camera-fullscreen"
         onLoadedMetadata={() => { 
-        if (videoRef.current) {
+          if (videoRef.current) {
             videoRef.current.play().catch((err) => {
-                console.error("Auto-play failed", err);
+              console.error("Auto-play failed", err);
             });
-        }
-
+          }
+          
         }}
       />
 
       <div className="camera-overlay">
+        <p className="Overlay-heading">
         TO GET BETTER RESULTS MAKE SURE TO HAVE
-      </div>
+        </p>
 
       <div className="instruction-wrapper">
         <div className="instruction-item">
@@ -75,6 +78,13 @@ function TakePhoto({ stream, onPhotoCaptured, onDone }) {
           <p className="instruction__c">Adequate Lighting</p>
         </div>
       </div>
+      </div>
+        <div className="instruction-item">
+           <p className="instruction__d">Take Picture</p>
+      <button className="photo-button" onClick={takePhoto}>
+        <MdCamera />
+      </button> 
+      </div>    
 
       <button className="diamond__arrow--wrapper-tp" onClick={onDone}>
         <Link to="/access">
@@ -83,15 +93,10 @@ function TakePhoto({ stream, onPhotoCaptured, onDone }) {
           </div>
           <p className="left__diamond--para-tp">Back</p>
         </Link>
-      </button>
-
-      <p className="instruction__d">Take Picture</p>
-      <button className="photo-button" onClick={takePhoto}>
-        <MdCamera />
-      </button>
-
+      </button>      
       <canvas ref={canvasRef} style={{ display: "none" }} />
     </div>
+        </div>
   );
 }
 

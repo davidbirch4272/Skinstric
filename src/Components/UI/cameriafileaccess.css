@@ -1,28 +1,28 @@
+/* Base layout */
 .page__cf {
   position: relative;
-  width: 100%;
-  height: 90vh;
+  width: 90%;
+  height: 80vh;
   background-color: white;
 }
 
-.diamond-stack-cf-1 {
+/* Diamond Layouts */
+.diamond-stack-cf-1,
+.diamond-stack-cf-2 {
   position: absolute;
-  top: 45%;
-  left: 23%;
+  top: 53%;
   width: 90vw;
   max-width: 700px;
   aspect-ratio: 1 / 1;
   transform: translate(-50%, -50%);
 }
 
+.diamond-stack-cf-1 {
+  left: 23%;
+}
+
 .diamond-stack-cf-2 {
-  position: absolute;
-  top: 45%;
   left: 75%;
-  width: 90vw;
-  max-width: 700px;
-  aspect-ratio: 1 / 1;
-  transform: translate(-50%, -50%);
 }
 
 .diamond-rotate-wrapper-cf {
@@ -46,7 +46,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg); 
+  transform: translate(-50%, -50%) rotate(45deg);
   background-color: white;
   border: 3px dotted #a0a4ab;
   display: flex;
@@ -59,7 +59,6 @@
   height: 320px;
   opacity: 0.3;
   z-index: 1;
-  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .inner-cf {
@@ -79,27 +78,107 @@
 }
 
 .diamond__content-cf {
-  position: absolute;
-  top: 130px;
-  left: 20px;
-  transform: translate(-50%, -50%);
-  transform-origin: center center;
-  width: 80%;
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   text-align: center;
-  font-weight: bold;
-  font-size: 0.9rem;
-  color: black;
-  z-index: 1;
+  z-index: 4;
 }
 
 .counter-spin-cf {
   animation: counter-rotate 75s linear infinite;
 }
 
+.camera-cf {
+  font-size: 120px;
+  border-radius: 200px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Scanlines */
+.scanline {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 3;
+}
+
+.scanline img {
+  width: 90px;
+  height: 90px;
+  opacity: 2;
+}
+
+.scanline__para-1 {
+  position: relative;
+  top: 10px;
+  left: -15px;
+  color: black;
+  font-size: 0.8rem;
+  width: 100%;
+  max-width: 220px;
+  line-height: 1.2;
+  font-weight: normal;
+  
+}
+
+.scanline__para-2 {
+  position: relative;
+  bottom: 30px;
+  right: 25px;
+  color: black;
+  font-size: 0.8rem;
+  max-width: 150px;
+  line-height: 1.2;
+  font-weight: normal;
+  transform: rotate(180deg);
+}
+
+
+
+.scanline-1 {
+  top: -20px;
+  left: 140px;
+  transform: rotate(0deg);
+}
+
+.scanline-2 {
+  bottom: -20px;
+  left: -180px;
+  transform: rotate(180deg);
+}
+
+/* Preview */
+.preview__wrapper-cf {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid gray;
+  position: absolute;
+  top: 3%;
+  right: 0%;
+  opacity: 99;
+}
+
+.preview-cf {
+  color: #1a1b1c;
+  margin: 0 0 4px;
+}
+
+.half-container-cf {
+  width: 10vw;
+  height: 8vw;
+}
+
+/* Arrows */
 .diamond__arrow--wrapper-cf {
   display: flex;
   justify-content: center;
@@ -122,6 +201,7 @@
   transform: rotate(360deg);
 }
 
+/* Permission Popup */
 .permission-popup {
   position: absolute;
   top: 30%;
@@ -131,13 +211,10 @@
   color: white;
   padding: 30px;
   border-radius: 8px;
-  z-index: 1000; 
+  z-index: 1000;
   text-align: center;
   width: 400px;
-  
-  
 }
-
 
 .permission-text {
   font-size: 1.3rem;
@@ -173,44 +250,138 @@
   background-color: #444;
 }
 
-.preview__wrapper-cf {
-    flex-direction: column;
-   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  border: 1px solid gray; 
+/* Keyframes */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counter-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@media (max-width: 1279px) {
+
+.diamond-stack-cf-1 {
   position: absolute;
-  top: 3%;
-  right: 3%;
-  opacity: 99;
+  top: 53%;
+  left: 30%;
+  width: 90vw;
+  max-width: 700px;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
 }
 
-.preview-cf {
-    color: #1a1b1c;
-    margin:  0 0 4px;
+.diamond-stack-cf-2 {
+  position: absolute;
+  top: 53%;
+  left: 70%;
+  width: 90vw;
+  max-width: 700px;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
+}
+
+  .diamond-stack-cf-1 {
+    transform: translate(calc(-30% - 200px), -50%);
+  }
+
+  .diamond-stack-cf-2 {
+    transform: translate(calc(-70% + 200px), -50%);
+  }
+
 
 }
 
-.half-container-cf {
-  width: 10vw;
-  height: 8vw;
-    
-}
-
-.camera-cf {
+@media (max-width: 1023px) and (min-width: 768px) {
+  .diamond-stack-cf-1,
+  .diamond-stack-cf-2 {
     position: absolute;
-    height: auto;
-    font-size: 120px;
-    border-radius: 200px;
+    top: 53%;
+    left: 50%;
+    width: 80vw;
+    max-width: 500px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .diamond-stack-cf-1 {
+    transform: translate(calc(-50% - 200px), -50%);
+  }
+
+  .diamond-stack-cf-2 {
+    transform: translate(calc(-50% + 200px), -50%);
+  }
 }
 
-.takephoto-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: black;
-  z-index: 90;
+
+@media (max-width: 767px) {
+  .page__cf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    height: auto;
+  }
+
+  .diamond-stack-cf-1,
+  .diamond-stack-cf-2 {
+    position: relative;
+    top:  30%;
+    width: 180px;            /* 500% smaller than 320px */
+    height: 180px;
+    max-width: none;
+    aspect-ratio: 1 / 1;
+    transform: none;
+    left: auto;
+    top: auto;
+    margin: 40px 0;         /* spacing between diamonds */
+  }
+
+  .outer-cf {
+    width: 164px;
+    height: 164px;
+  }
+
+  .inner-cf {
+    width: 156px;
+    height: 156px;
+  }
+
+  .inner--last-cf {
+    width: 148px;
+    height: 148px;
+    padding: 6px;
+  }
+
+  .diamond__content-cf {
+    width: 100%;
+    height: 100%;
+  }
+
+  .camera-cf {
+    font-size: 96px;         /* 80% of original 120px */
+  }
+
+  .scanline img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .scanline__para-1,
+  .scanline__para-2 {
+    font-size: 0.6rem;
+    max-width: 120px;
+    line-height: 1.2;
+  }
 }
