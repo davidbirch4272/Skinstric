@@ -1,21 +1,49 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./takephoto.css";
 import { GoDiamond } from "react-icons/go";
 import DiamondWithLeftArrowWhite from "./DiamondWithLeftArrowWhite";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdCamera } from "react-icons/md";
+import { useNavigate } from "react-router-dom"
 
-function TakePhoto({ stream, onPhotoCaptured, onDone }) {
+function TakePhoto({ stream, onPhotoCaptured, onDone, onCameraReady }) {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const [photo, setPhoto] = useState(null);
+  const [processing, SetProcessing] = useState(False);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if (videoRef.current && stream) {
-      console.log("Attaching Stream in TakePhoto", stream);
-      videoRef.current.srcObject = stream;
-     
+    const video = videoRef.current;
+    if (video && stream) {
+      const handleCanPlay = () => {
+        console.log("Video Can play, calling on CameraReady");
+        if (onCameraReady) onCameraReady();
+      };
+      
+      console.log("Attaching Stream to Video Element");
+      video.srcObject = stream;
+      video.addEventListener("canplay", handleCanPlay);
+      video.play().catch((err) => {
+        console.error("Auto-Play failed, err")
+      });    
+    
+    return () => {
+    video.removeEventListener("canplay", handleCanPlay);
+  }
+}
+  },[stream, onCameraReady]);
+
+useEffect(() => {
+  return () => {
+    
+    if (videoRef.current && videoRef.current.srcObject) {
+      const tracks = videoRef.current.srcObject.getTracks();
+      tracks.forEach(track => track.stop());
+      console.log("Camera stream stopped on unmount.");
     }
-  }, [stream]);
+  };
+}, []);
 
 
   const takePhoto = () => {
@@ -39,10 +67,25 @@ function TakePhoto({ stream, onPhotoCaptured, onDone }) {
     setTimeout(() => onDone(), 100);
   };
 
+  const handleRetake = () => {
+    setPhoto(null);
+  };
+
+  const handleUsePhoto = () => {
+    SetProcessing(true);
+    
+    setTimeout(() => {
+    if (onPhotoCaptured) onPhotoCaptured(photo)
+    navigate("/");
+    }, 20000);
+  };
+
+  console.log("📷 TakePhoto component rendered");
+
+
   return (
     <div className="page__tp">
-
-    <div className="camera-view">
+      <div className="camera-view">
       <video
         ref={videoRef}
         autoPlay
@@ -54,11 +97,13 @@ function TakePhoto({ stream, onPhotoCaptured, onDone }) {
             videoRef.current.play().catch((err) => {
               console.error("Auto-play failed", err);
             });
-          }
-          
+            if (onCameraReady) onCameraReady();
+          }          
         }}
       />
 
+      {!photo && !processing && (
+         <>
       <div className="camera-overlay">
         <p className="Overlay-heading">
         TO GET BETTER RESULTS MAKE SURE TO HAVE
@@ -85,8 +130,38 @@ function TakePhoto({ stream, onPhotoCaptured, onDone }) {
         <MdCamera />
       </button> 
       </div>    
+         </>
+      )}
 
-      <button className="diamond__arrow--wrapper-tp" onClick={onDone}>
+      {photo && !processing && (        
+        <div className="photo-preview-overlay">
+          <p className="great-shot">Great Shot!</p>
+          <p className="preview-label">Preview</p>
+          <img src={photo} alt="Preview" className="photo-preview-image" />
+          <div className="photo-preview-buttons">
+            <button className="retake-button" onClick={handleRetake}>Retake</button>
+            <button className="use-button" onClick={handleUsePhoto}>Use This Photo</button>
+          </div>
+        </div>
+)}
+      
+{processing && (
+
+  <div className="analyze__image-overlay">
+        <div className="half__container-tp--end">
+          <div className="processing-state-tp">
+                  <h1 className="click-tp">Processing submission...</h1>
+                  <div className="dots-tp">
+                    <span>.</span>
+                    <span>.</span>
+                    <span>.</span>
+                  </div>
+                </div>
+            </div>
+            </div>
+          )}
+         
+       <button className="diamond__arrow--wrapper-tp" onClick={onDone}>
         <Link to="/access">
           <div className="arrow__left-tp">
             <DiamondWithLeftArrowWhite />
@@ -94,8 +169,10 @@ function TakePhoto({ stream, onPhotoCaptured, onDone }) {
           <p className="left__diamond--para-tp">Back</p>
         </Link>
       </button>      
+      
       <canvas ref={canvasRef} style={{ display: "none" }} />
-    </div>
+    
+        </div>
         </div>
   );
 }

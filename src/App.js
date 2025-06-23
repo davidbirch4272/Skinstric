@@ -5,6 +5,7 @@ import Landing from "./Components/Landing"
 import Home from './Pages/Home';
 import Testing from './Pages/Testing';
 import Access from './Pages/Access';
+import TakePhoto from './Components/UI/TakePhoto';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
          <Route path="/" element={<Home />} /> 
          <Route path="/Testing" element={<Testing />} />
          <Route path="/Access" element={<Access />} />
-  
+         <Route path="/TakePhoto"element={<TakePhoto />} />
         
       </Routes>
     </Router>

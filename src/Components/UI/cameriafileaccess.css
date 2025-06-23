@@ -269,6 +269,47 @@
   }
 }
 
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.diamond-stack-loading {
+  position: relative;
+  width: 240px;
+  height: 240px;
+}
+
+.loading-text {
+  margin-top: 24px;
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.dots::after {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  animation: blinkDots 1.5s infinite steps(3);
+}
+
+@keyframes blinkDots {
+  0% { content: ''; }
+  33% { content: '.'; }
+  66% { content: '..'; }
+  100% { content: '...'; }
+}
+
 @media (max-width: 1279px) {
 
 .diamond-stack-cf-1 {
@@ -385,3 +426,4 @@
     line-height: 1.2;
   }
 }
+

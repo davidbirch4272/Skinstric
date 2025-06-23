@@ -11,6 +11,11 @@ function CameraFileAccess() {
   const [showPermission, setShowPermission] = useState(false);
   const [showCamera, setShowCamera] = useState(false);
   const [stream, setStream] = useState(null);
+  const [showLoading, setShowLoading] = useState(false);
+  const [CameraReady, setCameraReady] = useState(false);
+  const [minLoadingDone, setMinLoadingDone] = useState(false);
+
+
   const fileInputRef = useRef(null);
 
   const handleFileClick = () => fileInputRef.current.click();
@@ -27,24 +32,37 @@ function CameraFileAccess() {
   const handleClick = () => setShowPermission(true);
 
   const handleAllow = async () => {
+    setShowPermission(false);
+    setCameraReady(false);
+    setShowLoading(true);
+    
     try {
       const userStream = await navigator.mediaDevices.getUserMedia({ video: true });
       setStream(userStream);
-      setShowPermission(false);
+
+      setTimeout(() => {
+        setShowLoading(true);
+      }, 2000);
       setShowCamera(true);
-    } catch (err) {
+      } catch (err) {
       console.error("Camera access denied", err);
-      setShowPermission(false);
-    }
+       setShowPermission(false);
+      setShowLoading(false);
+     }
   };
 
   const handleDeny = () => setShowPermission(false);
 
   const handleDone = () => {
     if (stream) stream.getTracks().forEach((t) => t.stop());
-    setShowCamera(false);
     setStream(null);
+    setShowCamera(false);
   };
+
+  const handleCameraReady = () => {
+    setShowLoading(false);
+    setShowCamera(true)
+  }
 
   return (
     <div className="page__cf">
@@ -121,6 +139,26 @@ function CameraFileAccess() {
         </Link>
       </button>
 
+{showLoading && (
+  <div className="loading-overlay">
+    <div className="diamond-stack-loading">
+      <div className="diamond-rotate-wrapper-cf outer-rotate-cf">
+        <div className="diamond-cf outer-cf"></div>
+      </div>
+      <div className="diamond-rotate-wrapper-cf inner-rotate-cf">
+        <div className="diamond-cf inner-cf"></div>
+      </div>
+      <div className="diamond-rotate-wrapper-cf inner-last-rotate-cf">
+        <div className="diamond-cf inner--last-cf">
+           <div className="diamond__content-cf counter-spin-cf">
+       <p className="loading-text">Loading Camera<span className="dots">...</span></p>
+            </div>  
+        </div>
+      </div>
+    </div>    
+  </div>
+)}
+
       {showPermission && (
         <div className="permission-popup">
           <p className="permission-text">AI would like to access your camera</p>
@@ -138,6 +176,7 @@ function CameraFileAccess() {
             stream={stream}
             onPhotoCaptured={(photo) => setPhotoData(photo)}
             onDone={handleDone}
+            onCameraReady={handleCameraReady}
           />
         </div>
       )}
