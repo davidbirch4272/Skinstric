@@ -10,8 +10,15 @@ function TakePhoto({ stream, onPhotoCaptured, onDone, onCameraReady }) {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const [photo, setPhoto] = useState(null);
-  const [processing, SetProcessing] = useState(False);
+  const [processing, SetProcessing] = useState(false);
+  const [PhotoData, setPhotoData] = useState();
+  
   const navigate = useNavigate();
+  onPhotoCaptured={(photo) => {
+    setPhotoData(photo);
+    handleDone();
+    setTimeout(() => navigate("/"), 1500);
+  }
 
   useEffect(() => {
     const video = videoRef.current;
@@ -61,8 +68,9 @@ useEffect(() => {
     const ctx = canvas.getContext("2d");
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    const photo = canvas.toDataURL("image/png");
-    onPhotoCaptured(photo);
+    const photoData = canvas.toDataURL("image/png");
+    setPhoto(photoData)
+    onPhotoCaptured(photoData);
 
     setTimeout(() => onDone(), 100);
   };

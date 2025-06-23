@@ -60,8 +60,11 @@ function CameraFileAccess() {
   };
 
   const handleCameraReady = () => {
+    setCameraReady(true);
+    setTimeout(() => {
     setShowLoading(false);
-    setShowCamera(true)
+    setShowCamera(true);
+    }, 5000);
   }
 
   return (
