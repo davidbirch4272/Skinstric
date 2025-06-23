@@ -1,24 +1,26 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallBack } from "react";
 import "./takephoto.css";
 import { GoDiamond } from "react-icons/go";
 import DiamondWithLeftArrowWhite from "./DiamondWithLeftArrowWhite";
 import { Link, useNavigate } from "react-router-dom";
 import { MdCamera } from "react-icons/md";
-import { useNavigate } from "react-router-dom"
 
 function TakePhoto({ stream, onPhotoCaptured, onDone, onCameraReady }) {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const [photo, setPhoto] = useState(null);
   const [processing, SetProcessing] = useState(false);
-  const [PhotoData, setPhotoData] = useState();
+  const [PhotoDataState, setPhotoDataState] = useState();
   
   const navigate = useNavigate();
-  onPhotoCaptured={(photo) => {
-    setPhotoData(photo);
-    handleDone();
-    setTimeout(() => navigate("/"), 1500);
-  }
+
+  const handleDone = useCallBack(() => {
+   if (onDone) {
+    onDone();
+   }
+   console.log("Photo process marked as done.");
+
+  }, [onDone]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -32,7 +34,7 @@ function TakePhoto({ stream, onPhotoCaptured, onDone, onCameraReady }) {
       video.srcObject = stream;
       video.addEventListener("canplay", handleCanPlay);
       video.play().catch((err) => {
-        console.error("Auto-Play failed, err")
+        console.error("Auto-Play failed, err", err);
       });    
     
     return () => {
@@ -68,11 +70,15 @@ useEffect(() => {
     const ctx = canvas.getContext("2d");
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    const photoData = canvas.toDataURL("image/png");
-    setPhoto(photoData)
-    onPhotoCaptured(photoData);
+    const capturedPhotoData = canvas.toDataURL("image/png");
+    setPhoto(capturedPhotoData)
+    if (onPhotoCaptured) {
+    onPhotoCaptured(capturedPhotoData);
+    }
 
-    setTimeout(() => onDone(), 100);
+    setPhotoDataState(capturedPhotoData);
+    handleDone();
+    setTimeout(() => navigate("/"), 1500);
   };
 
   const handleRetake = () => {
@@ -108,7 +114,7 @@ useEffect(() => {
             if (onCameraReady) onCameraReady();
           }          
         }}
-      />
+      />  
 
       {!photo && !processing && (
          <>
