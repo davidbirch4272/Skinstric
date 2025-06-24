@@ -3,7 +3,7 @@ import TakePhoto from "./TakePhoto";
 import DiamondWithLeftArrow from "./DiamondWithLeftArrow";
 import { MdCamera } from "react-icons/md";
 import { ImFilePicture } from "react-icons/im";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./cameriafileaccess.css";
 
 function CameraFileAccess() {
@@ -14,8 +14,9 @@ function CameraFileAccess() {
   const [showLoading, setShowLoading] = useState(false);
   const [CameraReady, setCameraReady] = useState(false);
   const [minLoadingDone, setMinLoadingDone] = useState(false);
-
-
+  const [fileLoading, setFileLoading] = useState(false);
+  const navigate = useNavigate();
+  
   const fileInputRef = useRef(null);
 
   const handleFileClick = () => fileInputRef.current.click();
@@ -24,7 +25,17 @@ function CameraFileAccess() {
     const selectedFile = event.target.files[0];
     if (selectedFile) {
       const reader = new FileReader();
+
       reader.onloadend = () => setPhotoData(reader.result);
+
+      setTimeout(() => {
+        setFileLoading(true);
+
+        setTimeout(() => {
+        navigate("/");
+        }, 1500);
+      }, 500);
+
       reader.readAsDataURL(selectedFile);
     }
   };
@@ -35,20 +46,22 @@ function CameraFileAccess() {
     setShowPermission(false);
     setCameraReady(false);
     setShowLoading(true);
-    
+
     try {
-      const userStream = await navigator.mediaDevices.getUserMedia({ video: true });
+      const userStream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+      });
       setStream(userStream);
 
       setTimeout(() => {
         setShowLoading(true);
-      }, 2000);
+      }, 500);
       setShowCamera(true);
-      } catch (err) {
+    } catch (err) {
       console.error("Camera access denied", err);
-       setShowPermission(false);
+      setShowPermission(false);
       setShowLoading(false);
-     }
+    }
   };
 
   const handleDeny = () => setShowPermission(false);
@@ -62,10 +75,10 @@ function CameraFileAccess() {
   const handleCameraReady = () => {
     setCameraReady(true);
     setTimeout(() => {
-    setShowLoading(false);
-    setShowCamera(true);
+      setShowLoading(false);
+      setShowCamera(true);
     }, 5000);
-  }
+  };
 
   return (
     <div className="page__cf">
@@ -102,7 +115,10 @@ function CameraFileAccess() {
           <div className="diamond-cf inner--last-cf">
             <div className="diamond__content-cf counter-spin-cf">
               <div className="camera-cf">
-                <ImFilePicture onClick={handleFileClick} style={{ cursor: "pointer" }} />
+                <ImFilePicture
+                  onClick={handleFileClick}
+                  style={{ cursor: "pointer" }}
+                />
                 <input
                   type="file"
                   accept="image/*"
@@ -127,7 +143,12 @@ function CameraFileAccess() {
             <img
               src={photoData}
               alt="Captured Preview"
-              style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 8 }}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+                borderRadius: 8,
+              }}
             />
           )}
         </div>
@@ -142,25 +163,27 @@ function CameraFileAccess() {
         </Link>
       </button>
 
-{showLoading && (
-  <div className="loading-overlay">
-    <div className="diamond-stack-loading">
-      <div className="diamond-rotate-wrapper-cf outer-rotate-cf">
-        <div className="diamond-cf outer-cf"></div>
-      </div>
-      <div className="diamond-rotate-wrapper-cf inner-rotate-cf">
-        <div className="diamond-cf inner-cf"></div>
-      </div>
-      <div className="diamond-rotate-wrapper-cf inner-last-rotate-cf">
-        <div className="diamond-cf inner--last-cf">
-           <div className="diamond__content-cf counter-spin-cf">
-       <p className="loading-text">Loading Camera<span className="dots">...</span></p>
-            </div>  
+      {showLoading && (
+        <div className="loading-overlay-cfa">
+          <div className="diamond-stack-loading">
+            <div className="diamond-rotate-wrapper-cf outer-rotate-cf">
+              <div className="diamond-cf outer-cf"></div>
+            </div>
+            <div className="diamond-rotate-wrapper-cf inner-rotate-cf">
+              <div className="diamond-cf inner-cf"></div>
+            </div>
+            <div className="diamond-rotate-wrapper-cf inner-last-rotate-cf">
+              <div className="diamond-cf inner--last-cf">
+                <div className="diamond__content-cf counter-spin-cf">
+                  <p className="loading-text">
+                    Loading Camera<span className="dots-cfa">...</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>    
-  </div>
-)}
+      )}
 
       {showPermission && (
         <div className="permission-popup">
@@ -183,6 +206,28 @@ function CameraFileAccess() {
           />
         </div>
       )}
+
+ {fileLoading && (
+          <div className="loading-overlay-cfa">
+          <div className="diamond-stack-loading">
+            <div className="diamond-rotate-wrapper-cf outer-rotate-cf">
+              <div className="diamond-cf outer-cf"></div>
+            </div>
+            <div className="diamond-rotate-wrapper-cf inner-rotate-cf">
+              <div className="diamond-cf inner-cf"></div>
+            </div>
+            <div className="diamond-rotate-wrapper-cf inner-last-rotate-cf">
+              <div className="diamond-cf inner--last-cf">
+                <div className="diamond__content-cf counter-spin-cf">
+                  <p className="loading-text">
+                    Analyzing Image<span className="dots-cfa">...</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+)}
     </div>
   );
 }

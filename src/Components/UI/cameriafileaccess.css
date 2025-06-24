@@ -11,6 +11,7 @@
 .diamond-stack-cf-2 {
   position: absolute;
   top: 53%;
+  left: 53%;
   width: 90vw;
   max-width: 700px;
   aspect-ratio: 1 / 1;
@@ -18,11 +19,11 @@
 }
 
 .diamond-stack-cf-1 {
-  left: 23%;
+  left: 27%;
 }
 
 .diamond-stack-cf-2 {
-  left: 75%;
+  left: 80%;
 }
 
 .diamond-rotate-wrapper-cf {
@@ -121,8 +122,7 @@
   left: -15px;
   color: black;
   font-size: 0.8rem;
-  width: 100%;
-  max-width: 220px;
+  max-width: 420px;
   line-height: 1.2;
   font-weight: normal;
   
@@ -164,7 +164,7 @@
   border: 1px solid gray;
   position: absolute;
   top: 3%;
-  right: 0%;
+  right: -8%;
   opacity: 99;
 }
 
@@ -269,7 +269,7 @@
   }
 }
 
-.loading-overlay {
+.loading-overlay-cfa {
   position: fixed;
   top: 0;
   left: 0;
@@ -296,7 +296,7 @@
   font-weight: bold;
 }
 
-.dots::after {
+.dots-cfa::after {
   content: '';
   display: inline-block;
   width: 1em;
@@ -309,6 +309,76 @@
   66% { content: '..'; }
   100% { content: '...'; }
 }
+
+  .file__selected-image-overlay {
+  position: relative;
+  top: 30%;
+  left: 45%;
+  width: 40%;
+  height: 20%;
+  background-color: rgb(220, 218, 218);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.half__container-cfa-fsio {
+  width: 20%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: absolute;
+  transition: background-color 0.5s ease;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+  pointer-events: auto;
+}
+/*You are here*/
+
+.processing-state-cfa-fsio .dots-cfa-fsio {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.processing-state-tp .dots-cfa-fsio span {
+  animation: pulse-tp 1s infinite alternate;
+  font-size: 24px;
+  color: black;
+}
+
+.processing-state-tp .dots-cfa-fsio span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.processing-state-tp .dots-cfa-fsio span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse-tp {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.click-cfa-fsio {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 1px;
+  color: #a0a4ab;
+}
+
+
 
 @media (max-width: 1279px) {
 
@@ -339,7 +409,6 @@
   .diamond-stack-cf-2 {
     transform: translate(calc(-70% + 200px), -50%);
   }
-
 
 }
 
