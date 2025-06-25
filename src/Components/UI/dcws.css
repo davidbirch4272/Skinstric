@@ -1,0 +1,212 @@
+.page__dcws {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  background-color: white;
+  overflow: hidden;
+  }
+
+  .starter__para-dcws {
+  margin-left: 40px;
+  font-size: 16px;
+  font-weight: 600;
+
+}
+
+.starter__para-sub-dcws {
+  margin:  4px 40px;
+  font-size: 14px;
+  font-weight: 400;
+
+
+}
+
+.diamond__wrapper--dcws {
+    position: relative;
+    top: 55px;
+    left: 16.5%;   /*8%*/
+}
+
+.diamond-dcws-1 {
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: 25px;
+  left: 30.5%;       
+  margin: -20px;
+  background-color: rgb(237, 227, 227);
+  transform: rotate(45deg);
+  border: 1px solid #A0A4AB;
+}
+
+.diamond-dcws-2 {
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: 127px;
+  left: 23.8%;       
+  margin: -20px;
+  background-color: #ebedf7;
+  transform: rotate(45deg);  
+  border: 1px solid #A0A4AB;
+  cursor: not-allowed;
+}
+
+.diamond-dcws-3 {
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: 230px;    
+  left: 30.5%;
+  margin: -20px;
+  background-color: #ebedf7;
+  transform: rotate(45deg);
+  border: 1px solid #A0A4AB;
+  cursor: not-allowed;
+}
+
+.diamond-dcws-4 {
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: 127px;
+  left: 37.2%;   
+  margin: -20px;
+  background-color: #ebedf7;  
+  transform: rotate(45deg);
+  border: 1px solid #A0A4AB;
+  cursor: not-allowed;
+}
+
+.diamond-dcws-1:hover {
+ background-color: #a0a4ab;
+} 
+
+.diamond-dcws-2:hover {
+ background-color: #a0a4ab;
+}
+
+.diamond-dcws-3:hover {
+ background-color: #a0a4ab;
+}
+
+.diamond-dcws-4:hover {
+ background-color: #a0a4ab;
+}
+
+.expander-dcws {
+  position: absolute;
+  background-color: transparent;
+  border: 2px dotted #A0A4AB;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Match same positions as your diamonds */
+.expander-1 {
+  top: 2px;       /* 2px */
+  left: 22.33%;   
+  width: 350px;
+  height: 350px;
+}
+.expander-2 {
+  top: -35px;
+  left: 19.9%;
+  width: 425px;
+  height: 425px;
+}
+.expander-3 {
+  top: -73px;
+  left: 17.45%;  /* 17.45  */
+  width: 500px;
+  height: 500px;
+}
+.expander-4 {
+  top: -35px;
+  left: 19.9%;
+  width: 425px;
+  height: 425px;
+}
+
+/* Trigger scale on hover of diamonds */
+.diamond-dcws-1:hover ~ .expander-1,
+.diamond-dcws-2:hover ~ .expander-2,
+.diamond-dcws-3:hover ~ .expander-3,
+.diamond-dcws-4:hover ~ .expander-4 {
+  transform: rotate(45deg) scale(1);
+}
+
+.label_demographics-dcws-1 {
+    position: absolute;
+    top: 60px;
+    right: 4px;
+    font-size: 16px;
+    transform: rotate(-45deg);
+}
+
+.label_demographics-dcws-2 {
+    position: absolute;
+    top: 50px;
+    left: 18px;
+    font-size: 16px;
+    transform: rotate(-45deg);
+}
+
+.label_demographics-dcws-3 {
+    position: absolute;
+    top: 57px;
+    right: 30px;
+    font-size: 16px;
+    transform: rotate(-45deg);
+}
+
+.label_demographics-dcws-4 {
+    position: absolute;
+    top: 56px;
+    left: -9px;
+    font-size: 16px;
+    transform: rotate(-45deg);
+}
+
+.diamond__arrow--wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  
+}
+
+.arrow__left-dcws {
+  position: absolute;
+  left: 65px;
+  top: 680px;
+  transform: rotate(45deg);
+  height: 50px;
+  
+}
+
+
+.left__diamond--para-dcws {
+  position: absolute;
+  left: 120px;
+  top: 693px;
+  transform: rotate(360deg)
+}
+
+.right__diamond--para-dcws {
+  position: absolute;
+  right: 60px;
+  top: 700px;
+  transform: translate(-50%, -50%) rotate(360deg);
+  
+}
+
+.arrow__right-dcws {
+  position: absolute;
+  right: 20px;
+  top: 700px;
+  transform: translate(-50%, -50%) rotate(45deg);
+
+}

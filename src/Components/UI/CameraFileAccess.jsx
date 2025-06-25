@@ -93,7 +93,8 @@ function CameraFileAccess() {
           <div className="diamond-cf inner--last-cf">
             <div className="diamond__content-cf counter-spin-cf">
               <div className="camera-cf">
-                <MdCamera onClick={handleClick} />
+                <MdCamera onClick={handleClick}
+                style={{ cursor: "pointer" }} />
               </div>
               <div className="scanline scanline-1">
                 <img src="./Scan1.svg" alt="scanline" />

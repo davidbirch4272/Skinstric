@@ -3,6 +3,9 @@ import "./startanalysis.css";
 import DiamondWithRightArrow from "./DiamondWithRightArrow";
 import DiamondWithLeftArrow from "./DiamondWithLeftArrow";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 function StartAnalysis() {
   const [step, setStep] = useState(1);
@@ -99,7 +102,7 @@ useEffect(() => {
                   <p className="click">CLICK TO TYPE</p>
                   <input
                     type="text"
-                    placeholder="Introduce Yourself"
+                    placeholder="                                    Introduce Yourself"
                     value={inputValue}
                     onChange={handleChange}
                     className="input__name"
@@ -112,7 +115,7 @@ useEffect(() => {
                   <p className="click">CLICK TO TYPE</p>
                   <input
                     type="text"
-                    placeholder="your city name"
+                    placeholder="                                    your city name"
                     value={inputValue}
                     onChange={handleChange}
                     className="input__name"
@@ -146,7 +149,16 @@ useEffect(() => {
                 localStorage.removeItem("userCity");
                 setUserData({ name: "", city: "" });
                 setStep(1);
-              }}>
+              }}
+                  data-aos="fade-right"
+                  data-aos-offset="1"
+                  data-aos-delay="250"
+                  data-aos-duration="1500"
+                  data-aos-easing="ease-in-out"
+                  data-aos-mirror="true"
+                  data-aos-once="true"
+                  data-aos-anchor-placement="center"              
+              >
                 <Link to="/access">
                   <image className="arrow__right-sa">
                     <DiamondWithRightArrow />

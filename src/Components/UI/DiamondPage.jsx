@@ -22,7 +22,8 @@ function App() {
                 onMouseEnter={() => setHoveredSide("right")}
                 onMouseLeave={() => setHoveredSide(null)}
               >
-                <DiamondWithLeftArrow />
+                <DiamondWithLeftArrow 
+                />
               </image>
               <p
                 className="left__diamond--para"
