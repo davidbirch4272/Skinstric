@@ -36,21 +36,48 @@ function StartAnalysis() {
 
   const handleChange = (e) => setInputValue(e.target.value);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (step === 1) {
-      localStorage.setItem("userName", inputValue);
-      setUserData((prev) => ({ ...prev, name: inputValue }));
-      setInputValue("");
-      setStep(2);
-    } else if (step === 2) {
-      localStorage.setItem("userCity", inputValue);
-      setUserData((prev) => ({ ...prev, city: inputValue }));
-      setInputValue("");
-      setStep(3);
+  if (step === 1) {
+    localStorage.setItem("userName", inputValue);
+    setUserData((prev) => ({ ...prev, name: inputValue }));
+    setInputValue("");
+    setStep(2);
+  } else if (step === 2) {
+    localStorage.setItem("userCity", inputValue);
+    
+    const updatedData = { 
+    name:  userData.name, 
+    location: inputValue,
+    };
+  
+   setUserData((prev) => ({ ...prev, city: inputValue } ));
+    setInputValue("");
+    setStep(3); 
+
+    try {
+      const response = await fetch(
+        "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(updatedData),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to send user data");
+      }
+
+      console.log(`Success: added ${updatedData.name} from ${updatedData.location}`);
+      console.log("Uploaded data:\n" + JSON.stringify(updatedData, null, 2));
+      
+    } catch (error) {
+      console.error("API error:", error);
     }
-  };
+  }
+};
 
 const navigate = useNavigate();
 const location = useLocation();

@@ -6,6 +6,14 @@
   background-color: white;
 }
 
+.starter__para-cfa {
+  margin-left: 40px;
+  font-size: 16px;
+  font-weight: 600;
+
+}
+
+
 /* Diamond Layouts */
 .diamond-stack-cf-1,
 .diamond-stack-cf-2 {

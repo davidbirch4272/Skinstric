@@ -8,6 +8,7 @@ import Testing from './Pages/Testing';
 import Access from './Pages/Access';
 import TakePhoto from './Components/UI/TakePhoto';
 import Variables from './Pages/Variables';
+import Graph from './Pages/Graph';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
@@ -37,7 +38,7 @@ function App() {
          <Route path="/Access"      element={<Access />} />
          <Route path="/TakePhoto"   element={<TakePhoto />} />
          <Route path="/Variables"   element={<Variables />} />
-        
+         <Route path="/Graph"       element={<Graph />} />
       </Routes>
     </Router>
     

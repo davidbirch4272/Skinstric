@@ -82,6 +82,12 @@ function CameraFileAccess() {
 
   return (
     <div className="page__cf">
+      <div className="para__wrapper-cfa">
+        <p className="starter__para-cfa">TO START ANALYSIS</p>
+      </div>
+
+      
+      
       <div className="diamond-stack-cf-1">
         <div className="diamond-rotate-wrapper-cf outer-rotate-cf">
           <div className="diamond-cf outer-cf"></div>
