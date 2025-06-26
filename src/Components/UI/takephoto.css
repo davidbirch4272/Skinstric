@@ -3,11 +3,11 @@
   width: 100vw;
   height: 100vh;
   background-color: black;
- 
+  overflow: hidden; 
 }
 
 .camera-view {
-  position: relative;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   background-color: black;
@@ -26,8 +26,8 @@
 }
 
 .camera-overlay {
-  position: absolute;
-  bottom: 250px;
+  position: fixed;
+  bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -43,7 +43,7 @@
   color: white;
   margin-bottom: 12px;
   text-align: center;
-  z-index: 30;
+  z-index: 50;
 }
 
 .instruction-wrapper {
@@ -69,20 +69,10 @@
   z-index: 50;
 }
 
-.instruction__a,
-.instruction__b,
-.instruction__c
- {
-  font-size: 12px;
-  margin-top: 4px;
-  color: white;
-  z-index: 50;
-}
-
 .instruction__d {
   position: absolute;
-  right: 70px;
   top: 49%;
+  right: 5%;
   transform: translateY(-50%);
   font-size: 1rem;
   color: white;
@@ -93,7 +83,7 @@
 
 .photo-button {
   position: absolute;
-  right: 20px;
+  right: 1%;
   top: 50%;
   transform: translateY(-50%);
   font-size: 2rem;
@@ -114,8 +104,8 @@
 
 .arrow__left-tp {
   position: absolute;
-  left: 65px;
-  top: 600px;
+  left: 4%;
+  top: 80%;
   transform: rotate(45deg);
   height: 50px;
   color: white;
@@ -124,15 +114,11 @@
 
 .left__diamond--para-tp {
   position: absolute;
-  left: 120px;
-  top: 600px;
+  left: 9%;
+  top: 81%;
   transform: rotate(360deg);
   color: white;
   z-index: 50;
-}
-
-canvas {
-  display: none;
 }
 
 .loading-overlay-tp {
@@ -257,7 +243,7 @@ canvas {
   width: 20%;
   height: 20%;
   background-color: rgb(211, 204, 204);
-  z-index: 30;
+  z-index: 50;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -281,7 +267,11 @@ canvas {
 
 
 .photo-preview-overlay {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 50;
   }
 
@@ -298,8 +288,8 @@ canvas {
 
 .great-shot {
   position: absolute;
-  top: 200px;
-  left: 50%;
+  top: 20%;
+  left: 45%;
   height: 54px;
   width: 106px;
   line-height: 1.5px;
@@ -310,25 +300,26 @@ canvas {
 
 
 .preview-label {
-  position:  absolute;
-  top: 450px;
-  left: 50%;
+  position: absolute;
+  top: 75%;
+  left: 47%;
+  transform: translateX(-50%);
   font-size: 18px;
+  font-weight: 600;
   height: 28px;
-  width: 64px;
+  width: auto;
   color: white;
-  font-weight: 400;
-  z-index: 50;
-  
+  z-index: 101; /* Elevated to be above image layers */
 }
 
 .photo-preview-buttons {
 position: absolute;
-top: 500px;
-left: 45%;
+top: 80%;
+left: 40%;
 display: flex;
 align-items: center;
 justify-content: center;
+z-index: 50;
 }
 
 .retake-button {
@@ -347,80 +338,9 @@ color: white;
 background-color: black;
 height: 36px;
 width: 142px;
-  font-size: 14px;
+font-size: 14px;
 padding: 4px 16px;
 z-index: 50;
-}
-
-.page__tp {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
- 
-}
-
-.camera-view {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  z-index: 20;
-}
-
-.camera-fullscreen {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  
-}
-
-.camera-overlay {
-  position: absolute;
-  bottom: 250px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  z-index: 20;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
- 
-}
-
-.Overlay-heading {
-  font-size: 1rem;
-  color: white;
-  margin-bottom: 12px;
-  text-align: center;
-  z-index: 50;
-}
-
-.instruction-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.instruction-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.small__diamond-a,
-.small__diamond-b,
-.small__diamond-c {
-  font-size: 1.2rem;
-  color: white;
-  margin-bottom: 4px;
-  z-index: 50;
 }
 
 .instruction__a,
@@ -433,323 +353,84 @@ z-index: 50;
   z-index: 50;
 }
 
-.instruction__d {
-  position: absolute;
-  right: 70px;
-  top: 49%;
-  transform: translateY(-50%);
-  font-size: 1rem;
-  color: white;
-  z-index: 50;
-  white-space: nowrap;
-
-}
-
-.photo-button {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 50;
-}
-
-.diamond__arrow--wrapper-tp {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  z-index: 50;
-}
-
-.arrow__left-tp {
-  position: absolute;
-  left: 65px;
-  top: 600px;
-  transform: rotate(45deg);
-  height: 50px;
-  color: white;
-  z-index: 50;
-}
-
-.left__diamond--para-tp {
-  position: absolute;
-  left: 120px;
-  top: 600px;
-  transform: rotate(360deg);
-  color: white;
-  z-index: 50;
-}
-
 canvas {
   display: none;
 }
 
-.loading-overlay-tp {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 90vh;
-  width: 90vw;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 20;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.processing-state-tp .dots-tp {
-  position: absolute;
-  top: 50%;
-  display: flex;
-  gap: 5px;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.processing-state-tp .dots-tp span {
-  animation: pulse-tp 1s infinite alternate;
-  font-size: 24px;
-  color: black;
-}
-
-.processing-state-tp .dots-tp span:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.processing-state-tp .dots-tp span:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-@keyframes pulse-tp {
-  from {
-    opacity: 0.1;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.click-tp {
-  font-size: 14px;
-  line-height: 24px;
-  margin-bottom: 1px;
-  color: #a0a4ab;
-}
-
-.preview-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  z-index: 50;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.preview-heading {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 12px;
-}
-
-.preview-subheading {
-  font-size: 1.2rem;
-  margin-bottom: 24px;
-  color: #cccccc;
-}
-
-.preview-image {
-  width: auto;
-  height: 40vh;
-  margin-bottom: 24px;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-}
-
-.preview-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-}
-
-.preview-button {
-  padding: 12px 20px;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.preview-retake {
-  background-color: #ccc;
-  color: black;
-}
-
-.preview-use {
-  background-color: black;
-  color: #ccc;
-  border: 1px solid #ccc;
-
+/* Devices smaller than 892px */
+@media (max-width: 891px) {
+  .arrow__left-tp {
+    left: 5%;
+    top: 80%;
   }
 
-.analyze__image-overlay {
-  position: absolute;
-  top: 20%;
-  left: 45%;
-  width: 20%;
-  height: 20%;
-  background-color: rgb(211, 204, 204);
-  z-index: 50;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.half__container-tp--end {
-  width: 20%;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  position: absolute;
-  transition: background-color 0.5s ease;
-  opacity: 0.5;
-  transition: opacity 0.8s ease;
-  pointer-events: auto;
-}
-
-
-.photo-preview-overlay {
-  position: relative;
+   .instruction__d {
+    right: 52px;
+    top: 49%;
+    font-size: 0.9rem;
   }
 
-.photo-preview-image {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 50;
-
-}
-
-.great-shot {
-  position: absolute;
-  top: 200px;
-  left: 50%;
-  height: 54px;
-  width: 106px;
-  line-height: 1.5px;
-  font-size: 14px;
-  color: white;
-  z-index: 100;
-}
-
-
-.preview-label {
-  position:  absolute;
-  top: 450px;
-  left: 50%;
-  font-size: 18px;
-  height: 28px;
-  width: 64px;
-  color: white;
-  font-weight: 400;
-  z-index: 50;
-  
-}
-
-.photo-preview-buttons {
-position: absolute;
-top: 500px;
-left: 45%;
-display: flex;
-align-items: center;
-justify-content: center;
-z-index: 50;
-}
-
-.retake-button {
- color: black;
- background-color: gray;
- font-size: 14px;
- height: 36px;
- width: 76px;
- margin: 0 24px 0 0;
- padding: 4px 16px;
- z-index: 50;
-}
-
-.use-button {
-color: white;
-background-color: black;
-height: 36px;
-width: 142px;
-  font-size: 14px;
-padding: 4px 16px;
-z-index: 50;
-}
-
-@media (max-width: 767px) {
-  .camera-overlay {
-    bottom: 120px;
-    padding: 0 16px;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    z-index: 30;
-  }
-
-  .instruction__d,
   .photo-button {
-    top: auto;
-    bottom: 100px;
-    right: 50%;
-    transform: translateX(50%);
-    position: absolute;
+    right: 10px;
+    top: 50%;
+    font-size: 1.5rem;
   }
 
-  .great-shot {
-    top: 100px;
-    font-size: 1rem;
+.great-shot {
+left: 55%;
+}
+
+.preview-label {
+  left: 50%;
+}
+
+}
+
+/* Devices smaller than 767px (phones) */
+@media (max-width: 767px) {
+  .instruction__item {
+    position: fixed;
+    margin-top: 12px;
+    transform: none;
+    
+  }
+  .instruction__d {
+    position: fixed;
+    top: 55%;
+    margin-top: 12px;
+    transform: none;
+    font-size: 0.9rem;
   }
 
-  .preview-label {
-    top: 160px;
-    font-size: 1rem;
+  .photo-button {
+    position: fixed;
+    top: 55%;
+    margin-top: 12px;
+    transform: none;
   }
 
   .photo-preview-buttons {
-    flex-direction: column;
-    top: 220px;
-    left: 50%;
-    transform: translateX(-50%);
-    gap: 12px;
+    top: 80%;
+    
   }
 
-  .retake-button,
-  .use-button {
-    width: 80vw;
+  .preview-label {
+    left: 57%;
   }
+
+  .arrow__left-tp {
+   position: fixed;
+   top:50%;
+    }
+
+  .left__diamond--para-tp {
+   position: fixed;
+   top: 57%;
+   left: 7%;
+  }
+
+
+
+
+
 }
-
-
-
-
-

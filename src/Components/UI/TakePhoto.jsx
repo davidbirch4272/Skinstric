@@ -85,7 +85,7 @@ function TakePhoto({ stream, onPhotoCaptured, onDone, onCameraReady }) {
 
     setTimeout(() => {
       if (onPhotoCaptured) onPhotoCaptured(photo);
-      navigate("/");
+      navigate("/variables");
     }, 2000);
   };
 
@@ -142,7 +142,7 @@ function TakePhoto({ stream, onPhotoCaptured, onDone, onCameraReady }) {
         {photo && !processing && (
           <div className="photo-preview-overlay">
             <p className="great-shot">Great Shot!</p>
-            <p className="preview-label">Preview</p>
+            <h2 className="preview-label">Preview</h2>
             <img src={photo} alt="Preview" className="photo-preview-image" />
             <div className="photo-preview-buttons">
               <button className="retake-button" onClick={handleRetake}>

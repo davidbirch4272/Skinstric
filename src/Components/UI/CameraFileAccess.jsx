@@ -32,7 +32,7 @@ function CameraFileAccess() {
         setFileLoading(true);
 
         setTimeout(() => {
-        navigate("/");
+        navigate("/variables");
         }, 1500);
       }, 500);
 

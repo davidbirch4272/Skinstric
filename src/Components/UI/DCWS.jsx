@@ -30,25 +30,26 @@ function DCWS() {
             <h1 className="label_demographics-dcws-3">WEATHER</h1>
           </div>
           <div className="expander-dcws expander-3" />
-
+           <Link to="/">
           <div className="diamond-dcws-4">
             <h1 className="label_demographics-dcws-4">SKIN TYPE DETAILS</h1>
           </div>
           <div className="expander-dcws expander-4" />
+           </Link>
         </div>
       </div>
 
       <button className="diamond__arrow--wrapper">
-        <Link to="/access">
+        <Link to="/">
           <image className="arrow__right-dcws">
             <DiamondWithRightArrow />
           </image>
-          <p className="right__diamond--para-dcws">Proceed</p>
+          <p className="right__diamond--para-dcws">Get Summary</p>
         </Link>
       </button>
 
       <button className="diamond__arrow--wrapper">
-        <Link to="/">
+        <Link to="/access">
           <image className="arrow__left-dcws">
             <DiamondWithLeftArrow />
           </image>
