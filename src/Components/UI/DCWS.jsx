@@ -16,10 +16,12 @@ function DCWS() {
           </p>
         </div>
         <div className="diamond__wrapper--dcws">
+         <Link to="/Graph">
           <div className="diamond-dcws-1">
             <h1 className="label_demographics-dcws-1">DEMOGRAPHICS</h1>
           </div>
           <div className="expander-dcws expander-1" />
+         </Link>
 
           <div className="diamond-dcws-2">
             <h1 className="label_demographics-dcws-2">COSMETIC CONCERNS</h1>
@@ -30,17 +32,15 @@ function DCWS() {
             <h1 className="label_demographics-dcws-3">WEATHER</h1>
           </div>
           <div className="expander-dcws expander-3" />
-           <Link to="/">
           <div className="diamond-dcws-4">
             <h1 className="label_demographics-dcws-4">SKIN TYPE DETAILS</h1>
           </div>
           <div className="expander-dcws expander-4" />
-           </Link>
-        </div>
+           </div>
       </div>
 
       <button className="diamond__arrow--wrapper">
-        <Link to="/">
+        <Link to="/Graph">
           <image className="arrow__right-dcws">
             <DiamondWithRightArrow />
           </image>

@@ -26,15 +26,37 @@ function CameraFileAccess() {
     if (selectedFile) {
       const reader = new FileReader();
 
-      reader.onloadend = () => setPhotoData(reader.result);
+      reader.onloadend = async () => {
+        const base64Data = reader.result;
+        setPhotoData(base64Data);
 
-      setTimeout(() => {
-        setFileLoading(true);
+        const payload = { image: base64Data };
+
+        try {
+          const response = await fetch(
+            "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            }
+          );
+
+          if (!response.ok) throw new Error("Failed to upload image");
+
+          console.log("Photo successfully uploaded.");
+          console.log(JSON.stringify(payload, null, 2));
+        } catch (error) {
+          console.error("Upload error:", error.message);
+        }
 
         setTimeout(() => {
-        navigate("/variables");
-        }, 1500);
-      }, 500);
+          setFileLoading(true);
+          setTimeout(() => {
+            navigate("/variables");
+          }, 1500);
+        }, 500);
+      };
 
       reader.readAsDataURL(selectedFile);
     }

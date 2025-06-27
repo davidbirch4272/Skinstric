@@ -2,23 +2,358 @@
   position: relative;
   width: 100%;
   height: 90vh;
-  background-color: white;
+  background-color: none;
+  margin: 0 20px;
+  padding: 0 16px;
   overflow: hidden;
   }
 
+ .para__wrapper-results {
+  margin-top: 20px;
+ }
+ 
+ 
   .starter__para-results {
-  margin-left: 40px;
+  margin-bottom: 4px;
   font-size: 16px;
   font-weight: 600;
 
 }
 
+.starter__demographics-results {
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 64px;
+  letter-spacing: -6%;
+  color: #1a1b1c;
+  
+
+  ;
+}
 
 .starter__para-sub-results {
-  margin:  4px 40px;
+  margin-top:  8px; 
   font-size: 14px;
   font-weight: 400;
 
 }
 
+.grid {
+margin: 40px 0 0;
+width: 96%;
+height: 423px;
+position: relative;
+top: -3%;
+display: flex;
+justify-content: flex-start;
+gap: 20px;
+align-items: center;
+
+}
+
+.side__panel {
+  position: relative;
+  top: -3.3%;
+  width: 135px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60%;
+  
+}
+
+.custom__rectangle-ethnicity {
+  width: 100%;       /* Adjust as needed */
+  height: 79px;      /* Adjust as needed */
+  border-top: solid 0.5px;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  background-color: #ebedf7;
+  margin: 0 0 12px;
+  padding: 12px;
+  flex-wrap: wrap;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.custom__rectangle-ethnicity:hover {
+  color:  rgba(114, 96, 96, 0.411);
+}
+
+.custom__rectangle-age:hover {
+  color: rgba(114, 96, 96, 0.411);
+}
+
+.custom__rectangle-gender:hover {
+  color:  rgba(114, 96, 96, 0.411);
+}
+
+
+.ethnicity__wrapper {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.ethnicity__is {
+  font-size: 16px;
+  color: white;
+  width: 100%;
+  height: 24;
+  flex-wrap: wrap;
+}
+
+.race {
+  font-size: 16px;
+  color: white;
+  width: 100%;
+  height: 24;
+  margin: 0 0 4px;
+}
+
+.custom__rectangle-age {
+  width: 100%;       /* Adjust as needed */
+  height: 79px;      /* Adjust as needed */
+  border-top: solid 0.5px;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  background-color: #ebedf7;
+  margin: 0 0 12px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.age__wrapper {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.age__range__is {
+  font-size: 16px;
+  color: black;
+  width: 100%;
+  height: 24;
+}
+
+.age {
+  font-size: 16px;
+  color: black;
+  width: 100%;
+  height: 24;
+  margin: 0 0 4px;
+}
+
+.custom__rectangle-gender {
+  width: 100%;       /* Adjust as needed */
+  height: 79px;      /* Adjust as needed */
+  border-top: solid 0.5px;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  background-color: #ebedf7;
+  margin: 0 0 12px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.gender__wrapper {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.gender__is {
+  font-size: 16px;
+  color: black;
+  width: 100%;
+  height: 24;
+}
+
+.gender {
+  font-size: 16px;
+  color: black;
+  width: 100%;
+  height: 24;
+  margin: 0 0 4px;
+}
+
+.custom__rectangle-graph {
+  position: relative;
+  top: 16.8%;
+  width: 61.5%;       /* Adjust as needed */
+  height: 425px;      /* Adjust as needed */
+  border-top: solid 0.5px;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  background-color: #ebedf7;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+
+.ethnicity__is--graph {
+  position: absolute;
+  top: 0px;
+  left: 0px;  
+  font-size: 40px;
+  width: 214;
+  height: 60px;
+  color: #1a1b1c;
+  margin: 0 0 8px;
+}
+
+.transparent__rectangle {
+  width: 384px;
+  height: 384px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 2%;
+  max-height: 384px;
+  background-color: lightgray;
+
+}
+
+.circle-progress {
+  width: 120px;
+  height: 120px;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: relative;
+  background: conic-gradient(#000 0% 75%, transparent 75% 100%);
+}
+
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+
+.custom__rectangle-ethnicity-specifications {
+  position: relative;
+  top: 18.3%;
+  width: 24.4%;       /* Adjust as needed */
+  height: 425px;      /* Adjust as needed */
+  border-top: solid 0.5px;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  background-color: #ebedf7;
+  margin: 0 0 12px;
+  padding: 12px;
+  flex-wrap: wrap;
+}
+
+.current__focus--ai-confidence {
+  display: flex;
+  padding: 0 16px;
+  justify-content: space-between;
+  height: 32px;
+}
+
+.AI__calculations-race {
+  font-size: 16px;
+  color: #1a1b1c;
+  height: 24px;
+  font-weight: 100;
+  margin: 0 0 8px;
+
+}
+
+.AI__confidence {
+  font-size: 16px;
+  color: #1a1b1c;
+  height: 24px;
+  font-weight: 100;
+  margin: 0 0 8px;
+  white-space: nowrap;
+  
+}
+
+
+.ethnicity__breakdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  cursor: pointer;
+}
+
+.ethnicity__breakdown:hover {
+  background-color: lightgray;
+  
+}
+
+.age__breakdown:hover {
+  background-color: lightgray;
+  
+}
+
+.gender__breakdown:hover {
+  background-color: lightgray;
+  
+}
+
+
+.ethnicity__breakdown.selected {
+  background-color: black;
+  cursor: pointer; /* keeps pointer */
+}
+
+.age__breakdown.selected {
+  background-color: black;
+  cursor: pointer; /* keeps pointer */
+}
+
+.gender__breakdown.selected {
+  background-color: black;
+  cursor: pointer; /* keeps pointer */
+}
+
+
+.ethnicity__breakdown.selected .community,
+.ethnicity__breakdown.selected .community span,
+.ethnicity__breakdown.selected .small__diamond-results,
+.ethnicity__breakdown.selected .percentage, 
+.age__breakdown.selected .community,
+.age__breakdown.selected .community span,
+.age__breakdown.selected .small__diamond-results,
+.age__breakdown.selected .percentage, 
+.gender__breakdown.selected .community,
+.gender__breakdown.selected .community span,
+.gender__breakdown.selected .small__diamond-results,
+.gender__breakdown.selected .percentage{
+  color: white;
+}
+
+.community {
+  display: flex;
+  text-align: center;
+  
+}
+
+
+.small__diamond-results {
+  color: black;
+  font-size: 14px;
+  margin: 0px 8px 0px 0px;
+}
+
+.Latino-Hispanic {
+  font-size: 16px;
+  color: #1a1b1c;
+
+}
 

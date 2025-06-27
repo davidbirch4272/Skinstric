@@ -80,11 +80,38 @@ function TakePhoto({ stream, onPhotoCaptured, onDone, onCameraReady }) {
     setPhoto(null);
   };
 
-  const handleUsePhoto = () => {
+  const handleUsePhoto = async () => {
     SetProcessing(true);
+
+   const payload = { image: photo };
+
+    try {
+      const response = await fetch(
+        "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (!response.ok) throw new Error("Failed to upload image");
+
+      console.log("Photo successfully uploaded.");
+      console.log(JSON.stringify(payload, null, 2));
+    } catch (error) {
+      console.error("Upload error:", error.message);
+    }
 
     setTimeout(() => {
       if (onPhotoCaptured) onPhotoCaptured(photo);
+  
+ if (videoRef.current && videoRef.current.srcObject) {
+    const tracks = videoRef.current.srcObject.getTracks();
+    tracks.forEach((track) => track.stop());
+    videoRef.current.srcObject = null; // Optional: clear the stream ref
+  }
+    
       navigate("/variables");
     }, 2000);
   };
