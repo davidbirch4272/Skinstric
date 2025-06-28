@@ -13,8 +13,6 @@
 
 }
 
-
-/* Diamond Layouts */
 .diamond-stack-cf-1,
 .diamond-stack-cf-2 {
   position: absolute;
@@ -186,7 +184,7 @@
   height: 8vw;
 }
 
-/* Arrows */
+
 .diamond__arrow--wrapper-cf {
   display: flex;
   justify-content: center;
@@ -201,6 +199,12 @@
   transform: rotate(45deg);
   height: 50px;
 }
+
+.arrow__left-cf:hover {
+transform: scale(1.2) rotate(45deg);
+transition: transform 0.3s ease;
+}
+
 
 .left__diamond--para-cf {
   position: absolute;

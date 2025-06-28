@@ -199,25 +199,31 @@
 
 .left__diamond--para-dcws {
   position: absolute;
-  left: 120px;
-  top: 693px;
+  left: 122px;
+  top: 687px;
   transform: rotate(360deg)
 }
 
 .right__diamond--para-dcws {
   position: absolute;
-  right: 60px;
-  top: 700px;
-  transform: translate(-50%, -50%) rotate(360deg);
+  right: 70px;
+  top: 687px;
+  transform: rotate(360deg);
   
 }
 
 .arrow__right-dcws {
   position: absolute;
   right: 20px;
-  top: 700px;
-  transform: translate(-50%, -50%) rotate(45deg);
-
+  top: 682px;
+  transform: rotate(45deg);
 }
+
+.arrow__left-dcws:hover,
+.arrow__right-dcws:hover {
+transform: scale(1.2) rotate(45deg);
+transition: transform 0.3s ease;
+}
+
 
 

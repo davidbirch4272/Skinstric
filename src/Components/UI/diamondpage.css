@@ -88,6 +88,14 @@
 
 }
 
+.arrow__left:hover, 
+.arrow__right:hover,
+.arrow-diamond:hover {
+  transform: scale(1.2); 
+  transition: transform 0.3s ease;
+  }  
+
+
 .center-text {
   position: absolute;
   top: 50%;

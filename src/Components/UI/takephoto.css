@@ -112,6 +112,12 @@
   z-index: 50;
 }
 
+.arrow__left-tp:hover {
+transform: scale(1.2) rotate(45deg);
+transition: transform 0.3s ease;
+}
+
+
 .left__diamond--para-tp {
   position: absolute;
   left: 9%;
@@ -268,8 +274,11 @@
 
 .photo-preview-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 25%;
+  left: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   z-index: 50;
@@ -288,7 +297,7 @@
 
 .great-shot {
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 45%;
   height: 54px;
   width: 106px;
@@ -301,7 +310,7 @@
 
 .preview-label {
   position: absolute;
-  top: 75%;
+  top: 50%;
   left: 47%;
   transform: translateX(-50%);
   font-size: 18px;
@@ -313,7 +322,7 @@
 }
 
 .photo-preview-buttons {
-position: absolute;
+position: fixed;
 top: 80%;
 left: 40%;
 display: flex;
@@ -376,17 +385,11 @@ canvas {
     font-size: 1.5rem;
   }
 
-.great-shot {
-left: 55%;
-}
 
-.preview-label {
-  left: 50%;
-}
 
 }
 
-/* Devices smaller than 767px (phones) */
+
 @media (max-width: 767px) {
   .instruction__item {
     position: fixed;
@@ -409,24 +412,21 @@ left: 55%;
     transform: none;
   }
 
-  .photo-preview-buttons {
-    top: 80%;
-    
-  }
-
-  .preview-label {
-    left: 57%;
-  }
-
-  .arrow__left-tp {
+    .arrow__left-tp {
    position: fixed;
-   top:50%;
-    }
+   top: 55.5%;
+  
+  }
+
+  .arrow__left-tp:hover {
+  transform: scale(1.2) rotate(45deg);
+  transition: transform 0.3s ease;
+  }  
 
   .left__diamond--para-tp {
    position: fixed;
-   top: 57%;
-   left: 7%;
+   top: 61%;
+   left: 6%;
   }
 
 

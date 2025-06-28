@@ -6,7 +6,6 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
 function StartAnalysis() {
   const [step, setStep] = useState(1);
   const [inputValue, setInputValue] = useState("");
@@ -36,77 +35,75 @@ function StartAnalysis() {
 
   const handleChange = (e) => setInputValue(e.target.value);
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  if (step === 1) {
-    localStorage.setItem("userName", inputValue);
-    setUserData((prev) => ({ ...prev, name: inputValue }));
-    setInputValue("");
-    setStep(2);
-  } else if (step === 2) {
-    localStorage.setItem("userCity", inputValue);
-    
-    const updatedData = { 
-    name:  userData.name, 
-    location: inputValue,
-    };
-  
-   setUserData((prev) => ({ ...prev, city: inputValue } ));
-    setInputValue("");
-    setStep(3); 
+    if (step === 1) {
+      localStorage.setItem("userName", inputValue);
+      setUserData((prev) => ({ ...prev, name: inputValue }));
+      setInputValue("");
+      setStep(2);
+    } else if (step === 2) {
+      localStorage.setItem("userCity", inputValue);
 
-    try {
-      const response = await fetch(
-        "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(updatedData),
+      const updatedData = {
+        name: userData.name,
+        location: inputValue,
+      };
+
+      setUserData((prev) => ({ ...prev, city: inputValue }));
+      setInputValue("");
+      setStep(3);
+
+      try {
+        const response = await fetch(
+          "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updatedData),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Failed to send user data");
         }
-      );
 
-      if (!response.ok) {
-        throw new Error("Failed to send user data");
+        console.log(
+          `Success: added ${updatedData.name} from ${updatedData.location}`
+        );
+        console.log("Uploaded data:\n" + JSON.stringify(updatedData, null, 2));
+      } catch (error) {
+        console.error("API error:", error);
       }
-
-      console.log(`Success: added ${updatedData.name} from ${updatedData.location}`);
-      console.log("Uploaded data:\n" + JSON.stringify(updatedData, null, 2));
-      
-    } catch (error) {
-      console.error("API error:", error);
     }
-  }
-};
-
-const navigate = useNavigate();
-const location = useLocation();
-
-useEffect(() => {
-  const handleBeforeUnload = () => {
-    localStorage.removeItem("userName");
-    localStorage.removeItem("userCity");
   };
 
-  window.addEventListener("beforeunload", handleBeforeUnload);
+  const navigate = useNavigate();
+  const location = useLocation();
 
- 
-  return () => {
-    window.removeEventListener("beforeunload", handleBeforeUnload);
-  };
-}, []);
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      localStorage.removeItem("userName");
+      localStorage.removeItem("userCity");
+    };
 
-useEffect(() => {
- 
-  if (location.key === "default") {
-    localStorage.removeItem("userName");
-    localStorage.removeItem("userCity");
-    setUserData({ name: "", city: "" });
-    setStep(1);
-    setInputValue("");
-  }
-}, [location]);
+    window.addEventListener("beforeunload", handleBeforeUnload);
 
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (location.key === "default") {
+      localStorage.removeItem("userName");
+      localStorage.removeItem("userCity");
+      setUserData({ name: "", city: "" });
+      setStep(1);
+      setInputValue("");
+    }
+  }, [location]);
 
   return (
     <div className="page__sa">
@@ -166,34 +163,36 @@ useEffect(() => {
                   <p className="click">Thank You! Proceed to the next step!</p>
                 </div>
               )}
-            </div>           
+            </div>
           </div>
         </div>
       </div>
-              {step === 4 && (
-              <button className="diamond__arrow--wrapper" onClick={() => {
-                localStorage.removeItem("userName");
-                localStorage.removeItem("userCity");
-                setUserData({ name: "", city: "" });
-                setStep(1);
-              }}
-                  data-aos="fade-right"
-                  data-aos-offset="1"
-                  data-aos-delay="250"
-                  data-aos-duration="1500"
-                  data-aos-easing="ease-in-out"
-                  data-aos-mirror="true"
-                  data-aos-once="true"
-                  data-aos-anchor-placement="center"              
-              >
-                <Link to="/access">
-                  <image className="arrow__right-sa">
-                    <DiamondWithRightArrow />
-                  </image>
-                  <p className="right__diamond--para-sa">Proceed</p>
-                </Link>
-              </button>
-            )}
+      {step === 4 && (
+        <button
+          className="diamond__arrow--wrapper"
+          onClick={() => {
+            localStorage.removeItem("userName");
+            localStorage.removeItem("userCity");
+            setUserData({ name: "", city: "" });
+            setStep(1);
+          }}
+          data-aos="fade-right"
+          data-aos-offset="1"
+          data-aos-delay="250"
+          data-aos-duration="1500"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="true"
+          data-aos-anchor-placement="center"
+        >
+          <Link to="/access">
+            <image className="arrow__right-sa">
+              <DiamondWithRightArrow />
+            </image>
+            <p className="right__diamond--para-sa">Proceed</p>
+          </Link>
+        </button>
+      )}
       <button className="diamond__arrow--wrapper">
         <Link to="/">
           <image className="arrow__left-sa">

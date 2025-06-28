@@ -103,7 +103,7 @@ function CameraFileAccess() {
     setTimeout(() => {
       setShowLoading(false);
       setShowCamera(true);
-    }, 5000);
+    }, 1500);
   };
 
   return (

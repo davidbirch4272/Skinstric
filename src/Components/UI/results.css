@@ -331,7 +331,17 @@ background-color: rgba(114, 96, 96, 0.411);
   color: #1a1b1c;
 }
 
-/* Responsive */
+@media (min-width: 768px) {
+  .diamond__arrow--wrapper-results,
+  .arrow__left-results,
+  .left__diamond--para-results,
+  .right__diamond--para-results,
+  .arrow__right-results {
+    display: none !important;
+  }
+}
+  
+
 @media (max-width: 767px) {
   .starter__demographics-results {
     font-size: 36px;
@@ -371,4 +381,55 @@ background-color: rgba(114, 96, 96, 0.411);
     top: 730px;
     width: 100%;
   }
+
+  .diamond__arrow--wrapper-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  
+}
+
+.arrow__left-results {
+  position: absolute;
+  left: 25px;    
+  top: 595px;
+  transform: rotate(45deg);
+  height: 50px;
+  
+}
+
+
+.left__diamond--para-results {
+  position: absolute;
+  left: 75px;
+  top: 605px;
+  transform: rotate(360deg)
+}
+
+.right__diamond--para-results {
+  position: absolute;
+  right: 90px;
+  top: 613px;
+  transform: translate(-50%, -50%) rotate(360deg);
+  
+}
+
+.arrow__right-results {
+  position: absolute;
+  right: 65px;
+  top: 595px;
+  transform: rotate(45deg);
+  height: 50px;
+
+}
+
+.arrow__left-results:hover,
+.arrow__right-results:hover {
+transform: scale(1.2) rotate(45deg);
+transition: transform 0.3s ease;
+}
+
+
+
 }

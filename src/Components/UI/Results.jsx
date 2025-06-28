@@ -2,6 +2,9 @@
   import { GoDiamond } from "react-icons/go";
   import results from "./results.css";
   import DonutProgress from "./DonutProgress";
+  import DiamondWithRightArrow from "./DiamondWithRightArrow";
+  import DiamondWithLeftArrow from "./DiamondWithLeftArrow";
+  import { Link } from "react-router-dom";
 
   function Results() {
     const [activeType, setActiveType] = useState("ethnicity");
@@ -184,8 +187,25 @@
             ))}
           </div>
         </div>
+      <button
+          className="diamond__arrow--wrapper-results">
+          <Link to="/">
+            <image className="arrow__right-results">
+              <DiamondWithRightArrow />
+            </image>
+            <p className="right__diamond--para-results">Home</p>
+          </Link>
+        </button>
+      <button className="diamond__arrow--wrapper-results">
+        <Link to="/variables">
+          <image className="arrow__left-results">
+            <DiamondWithLeftArrow />
+          </image>
+          <p className="left__diamond--para-results">Back</p>
+        </Link>
+      </button>        
       </div>
-    );
+);
   }
 
   export default Results;
