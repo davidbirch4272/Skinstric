@@ -124,12 +124,13 @@ function StartAnalysis() {
               {step === 1 && (
                 <form onSubmit={handleSubmit} className="message__input">
                   <p className="click">CLICK TO TYPE</p>
-                  <input
+                  <input  
                     type="text"
-                    placeholder="                                    Introduce Yourself"
+                    placeholder="Introduce Yourself"
                     value={inputValue}
                     onChange={handleChange}
                     className="input__name"
+                    autoFocus
                   />
                 </form>
               )}
@@ -139,10 +140,11 @@ function StartAnalysis() {
                   <p className="click">CLICK TO TYPE</p>
                   <input
                     type="text"
-                    placeholder="                                    your city name"
+                    placeholder="your city name"
                     value={inputValue}
                     onChange={handleChange}
                     className="input__name"
+                    autoFocus
                   />
                 </form>
               )}
