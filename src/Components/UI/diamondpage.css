@@ -219,7 +219,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
     height: 100%;
         
   }
@@ -255,15 +254,6 @@
   }
 
   
-  .arrow-diamond {
-    position: absolute;
-    top: 240px;
-    left: 140px;
-    transform: rotate(90deg);
-    margin-top: 10px;
-  }
-
-
   .landing__bottom--para {
     font-size: 16px;
     color: #1a1b1c83;
@@ -333,6 +323,12 @@
     margin-top: 10px;
   }
 
+  .enter-button:hover, .arrow-diamond:hover {
+  transform: scale(1.2) rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+  
   .dp_diamond-stack  {
     position: relative;
     top: 140px;
@@ -373,6 +369,8 @@
     padding: 10px;
   }
 
- 
+
+  
+
 }
 

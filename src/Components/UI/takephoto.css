@@ -265,9 +265,8 @@ transition: transform 0.3s ease;
   align-items: center;
   background-color: transparent;
   position: absolute;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease, opacity 0.8 ease;
   opacity: 0.5;
-  transition: opacity 0.8s ease;
   pointer-events: auto;
 }
 
@@ -362,19 +361,6 @@ width: 130px;
 canvas {
   display: none;
 }
-
-@media (ma-width: 1279px) {
- .retake-button {
-    transform: translate(calc(-46% + 300px), -50%);
-  }
-
-  .use-button {
-    transform: translate(calc(-54% + 100px), -50%);
-  }
-
-
-}
-
 
 @media (max-width: 891px) {
   .arrow__left-tp {

@@ -345,12 +345,11 @@ transition: transform 0.3s ease;
   align-items: center;
   background-color: transparent;
   position: absolute;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease, opacity 0.8s ease;
   opacity: 1;
-  transition: opacity 0.8s ease;
   pointer-events: auto;
 }
-/*You are here*/
+
 
 .processing-state-cfa-fsio .dots-cfa-fsio {
   position: absolute;
@@ -414,7 +413,7 @@ transition: transform 0.3s ease;
   transform: translate(-50%, -50%);
 }
 
-  .diamond-stack-cf-1 {
+  .diamond-stack-cf-1  {
     transform: translate(calc(-30% - 200px), -50%);
   }
 

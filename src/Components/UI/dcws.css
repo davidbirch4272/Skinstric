@@ -34,7 +34,7 @@
   background-color: rgb(237, 227, 227);
   position: absolute;
   top: 0%;
-  left: 50%;      /*30.5% - 22.33 = 18.83%  88.1244  468-88 = 380*/       
+  left: 50%;        
   transform: translateX(-50%)rotate(45deg);
   border: 1px solid #A0A4AB;
   cursor: pointer;
@@ -45,7 +45,7 @@
   height: 140px;
   position: absolute;
   top: 100px;
-  left: 0;    /*23.8%*/   
+  left: 0;     
   background-color: #ebedf7;
   transform:  translateX(-123%) translateY(1%) rotate(45deg);  
   border: 1px solid #A0A4AB;
@@ -57,7 +57,7 @@
   height: 140px;
   position: absolute;
   top: 200px;    
-  left: 50%;     /*30.5%*/ 
+  left: 50%;   
   background-color: #ebedf7;
   transform:  translateX(-50%) translateY(3%) rotate(45deg);
   border: 1px solid #A0A4AB;
@@ -69,7 +69,7 @@
   height: 140px;
   position: absolute;
   top: 300px;
-  right: 0;    /*37.2%*/ 
+  right: 0;    
   margin: -20px;
   background-color: #ebedf7;  
   transform:  translateX(109%) translateY(-127%) rotate(45deg);
@@ -77,21 +77,9 @@
   cursor: not-allowed;
 }
 
-.diamond-dcws-1:hover {
+.diamond-dcws-1:hover, .diamond-dcws-2:hover, .diamond-dcws-3:hover, .diamond-dcws-4:hover   {
  background-color: #a0a4ab;
 } 
-
-.diamond-dcws-2:hover {
- background-color: #a0a4ab;
-}
-
-.diamond-dcws-3:hover {
- background-color: #a0a4ab;
-}
-
-.diamond-dcws-4:hover {
- background-color: #a0a4ab;
-}
 
 .expander-dcws {
   position: absolute;
