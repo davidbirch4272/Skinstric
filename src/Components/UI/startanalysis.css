@@ -202,7 +202,7 @@ textarea {
   
 }
 
-.arrow__left-sa:hover {
+.arrow__left-sa:hover, .arrow__right-sa:hover {
   transform: scale(1.2) rotate(45deg);
   transition: transform 0.3s ease;
   }  
@@ -218,17 +218,17 @@ textarea {
 
 .right__diamond--para-sa {
   position: absolute;
-  right: 60px;
-  top: 613px;
+  right: 85px;
+  top:  613px;
   transform: translate(-50%, -50%) rotate(360deg);
   
 }
 
 .arrow__right-sa {
   position: absolute;
-  right: 20px;
-  top: 613px;
-  transform: translate(-50%, -50%) rotate(45deg);
+  right: 65px;
+  top: 595px;
+  transform: rotate(45deg);
 
 }
 

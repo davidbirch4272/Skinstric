@@ -273,16 +273,12 @@ transition: transform 0.3s ease;
 
 
 .photo-preview-overlay {
-  position: fixed;
-  top: 25%;
-  left: 0%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  z-index: 50;
-  }
+ position: fixed;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ z-index: 50;
+}
 
 .photo-preview-image {
   width: 100vw;
@@ -296,9 +292,9 @@ transition: transform 0.3s ease;
 }
 
 .great-shot {
-  position: absolute;
-  top: 10%;
-  left: 45%;
+  position: fixed;
+  top: 30%;
+  left: 50%;
   height: 54px;
   width: 106px;
   line-height: 1.5px;
@@ -309,47 +305,48 @@ transition: transform 0.3s ease;
 
 
 .preview-label {
-  position: absolute;
-  top: 50%;
-  left: 47%;
-  transform: translateX(-50%);
+  position: fixed;
+  top: 81%;  
+  left: 50%;
   font-size: 18px;
   font-weight: 600;
   height: 28px;
   width: auto;
   color: white;
-  z-index: 101; /* Elevated to be above image layers */
+  z-index: 101; 
 }
 
 .photo-preview-buttons {
 position: fixed;
-top: 80%;
-left: 40%;
+bottom: 8%;
+left: 50%;
+transform: translateX(-25%);
 display: flex;
-align-items: center;
-justify-content: center;
+gap: 16px;
 z-index: 50;
 }
 
-.retake-button {
- color: black;
- background-color: gray;
- font-size: 14px;
+.retake-button,
+.use-button {
  height: 36px;
- width: 76px;
- margin: 0 24px 0 0;
+ font-size: 14px;
  padding: 4px 16px;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
  z-index: 50;
+}
+
+.retake-button {
+background-color: gray;
+color: black;
+
 }
 
 .use-button {
 color: white;
 background-color: black;
-height: 36px;
-width: 142px;
-font-size: 14px;
-padding: 4px 16px;
-z-index: 50;
+width: 130px;
 }
 
 .instruction__a,
@@ -366,7 +363,19 @@ canvas {
   display: none;
 }
 
-/* Devices smaller than 892px */
+@media (ma-width: 1279px) {
+ .retake-button {
+    transform: translate(calc(-46% + 300px), -50%);
+  }
+
+  .use-button {
+    transform: translate(calc(-54% + 100px), -50%);
+  }
+
+
+}
+
+
 @media (max-width: 891px) {
   .arrow__left-tp {
     left: 5%;

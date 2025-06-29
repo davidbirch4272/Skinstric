@@ -6,9 +6,18 @@
   font-family: 'Outfit', sans-serif;
 }
 
-a:hover {
-  text-decoration: underline;
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+
+}
+
+.h1 {
+  text-decoration: none;
 }
 
 .nav {
@@ -47,9 +56,13 @@ background-color: white;
 }
 
 .Nav__Main--Title {
+    text-size-adjust: small;
     font-size: 14px;
+    font-size: 70%;
     margin: 0 8px 0 0;
-    padding: 8px 16px
+    padding: 8px 16px;
+    color: black;
+    text-decoration: none;
 
 }
 
