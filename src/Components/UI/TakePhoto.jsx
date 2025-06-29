@@ -96,7 +96,7 @@ function TakePhoto({ stream, onPhotoCaptured, onDone, onCameraReady }) {
       );
 
       if (!response.ok) throw new Error("Failed to upload image");
-      const responseData = await response.json(); // <- Get API response
+      const responseData = await response.json(); 
       localStorage.setItem("skinstic Result", JSON.stringify(responseData));
       console.log("API response:", responseData);
 
@@ -112,7 +112,7 @@ function TakePhoto({ stream, onPhotoCaptured, onDone, onCameraReady }) {
  if (videoRef.current && videoRef.current.srcObject) {
     const tracks = videoRef.current.srcObject.getTracks();
     tracks.forEach((track) => track.stop());
-    videoRef.current.srcObject = null; // Optional: clear the stream ref
+    videoRef.current.srcObject = null; 
   }
 
       navigate("/variables");

@@ -10,7 +10,7 @@ function DonutProgress({ percentage, size, strokeWidth, progressColor, backgroun
   useEffect(() => {
     const targetOffset = circumference - (percentage / 100) * circumference;
     const startOffset = prevOffsetRef.current;
-    const animationDuration = 3000; // ms
+    const animationDuration = 3000; 
     let startTime = null;
 
     function animate(timestamp) {
@@ -18,7 +18,7 @@ function DonutProgress({ percentage, size, strokeWidth, progressColor, backgroun
       const elapsed = timestamp - startTime;
       const progress = Math.min(elapsed / animationDuration, 1);
       
-      // ease function (easeInOutQuad)
+    
       const easeProgress = progress < 0.5 
         ? 2 * progress * progress 
         : -1 + (4 - 2 * progress) * progress;
@@ -29,7 +29,7 @@ function DonutProgress({ percentage, size, strokeWidth, progressColor, backgroun
       if (progress < 1) {
         requestAnimationFrame(animate);
       } else {
-        prevOffsetRef.current = targetOffset; // save current as previous for next anim
+        prevOffsetRef.current = targetOffset; 
       }
     }
 
@@ -38,7 +38,7 @@ function DonutProgress({ percentage, size, strokeWidth, progressColor, backgroun
 
   return (
     <svg width={size} height={size}>
-      {/* Background circle */}
+     
       <circle
         cx={size / 2}
         cy={size / 2}
@@ -47,8 +47,7 @@ function DonutProgress({ percentage, size, strokeWidth, progressColor, backgroun
         stroke={backgroundColor}
         strokeWidth={strokeWidth}
       />
-      {/* Animated Progress Circle */}
-      <circle
+        <circle
         cx={size / 2}
         cy={size / 2}
         r={radius}
@@ -60,7 +59,7 @@ function DonutProgress({ percentage, size, strokeWidth, progressColor, backgroun
         strokeLinecap="round"
         transform={`rotate(-90 ${size / 2} ${size / 2})`}
       />
-      {/* Center Text */}
+      
       <text
         x="50%"
         y="50%"

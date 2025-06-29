@@ -169,7 +169,7 @@
     z-index: 999;
   }
 
-.center-text {
+  .center-text {
   position: absolute;
   left: 40px;
   top: 60px;
@@ -183,9 +183,9 @@
   text-align: center;
   transition: transform 0.8s ease;
   z-index: 1;
-  padding-bottom: 100px;
+  padding-bottom: 100px; 
   
-  }
+  }  
 
   .landing__bottom--para {
     position: static;
@@ -195,23 +195,40 @@
     margin: 10px auto;
   }
 
-  .enter-button {
+    .enter-button {
     position: absolute;
     bottom: 140px;
     left: 40px;
     transform: rotate(45deg);
     font-size: 12px;
     background-color: white;
-    border: none;
-  }
+    border: none; 
+  } 
+
 
  .arrow-diamond {
     position: absolute;
     top: 240px;
     left: 140px;
-    transform: rotate(90deg);
     margin-top: 10px;
+   
+  }  
+
+  .arrow-diamond:hover {
+  transform: scale(1.2);
+    transition: transform 0.3 ease;
   }
+ 
+.arrow__right {
+  transform: rotate(90deg);
+}
+
+  .enter-button:hover {
+  transform: scale(1.2) rotate(45deg);
+  transition: transform 0.3s ease;
+  }
+
+
 
   .dp_diamond-stack  {
     position: relative;
@@ -280,8 +297,7 @@
   position: absolute;
   left: 10px;
   top: 40px;
-  transform: translate(0%, 0%);
-  transform: rotate(45deg);
+  transform: translate(0%, 0%) rotat(45deg);
   font-weight: 300;
   font-size: 30px;
   color: #1a1b1c;

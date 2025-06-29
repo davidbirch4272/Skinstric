@@ -44,7 +44,7 @@ function CameraFileAccess() {
 
           if (!response.ok) throw new Error("Failed to upload image");
 
-           const responseData = await response.json(); // <-- ✅ PARSE RESPONSE
+           const responseData = await response.json();
            localStorage.setItem("skinstricResult", JSON.stringify(responseData));
            console.log("API response:", responseData);
 
