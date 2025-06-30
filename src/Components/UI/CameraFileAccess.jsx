@@ -63,8 +63,8 @@ function CameraFileAccess() {
           setFileLoading(true);
           setTimeout(() => {
             navigate("/variables");
-          }, 2);
-        }, 1500);
+          }, 1500);
+        }, 500);
       };
 
       reader.readAsDataURL(selectedFile);
