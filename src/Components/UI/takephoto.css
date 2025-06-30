@@ -378,15 +378,17 @@ canvas {
 
   .arrow__left-tp {
    position: fixed;
-   top: 55.5%;
-  
+   top: 55.5%;  /*55%*/
+   left: 50%;  /*50%*/
+   
   }
 
   .left__diamond--para-tp {
    position: fixed;
-   top: 62%;  /* 61% */
-   left: 7%;  /*6%*/
+   top: 62%;  /* 62% */
+   left: 50%;  /*7%*/
   }
+
 
 
 
