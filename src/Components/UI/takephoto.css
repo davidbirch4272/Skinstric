@@ -243,7 +243,7 @@ transition: transform 0.3s ease;
   }
 
 .analyze__image-overlay {
-  position: absolute;
+  position: fixed;
   top: 20%;
   left: 45%;
   width: 20%;
@@ -424,8 +424,9 @@ canvas {
    left: 6%;
   }
 
+.analyze__image-overlay {
+  width: 30%;
 
-
-
+}
 
 }

@@ -4,6 +4,7 @@ import DiamondWithLeftArrow from "./DiamondWithLeftArrow";
 import DiamondWithRightArrow from "./DiamondWithRightArrow";
 import { Link } from "react-router-dom";
 
+
 function App() {
   const [hoveredSide, setHoveredSide] = useState(null);
 
@@ -76,14 +77,35 @@ function App() {
                 SKINSTIC DEVELOPED AN A.I. THAT CREATES A HIGHLY-PERSONALISED
                 ROUTINE TAILORED TO WHAT YOUR SKIN NEEDS.
               </p>
-              <div className="experience-entry">
+                <div className="experience-entry">
                 <Link to="/testing">
-                <button className="enter-button">ENTER EXPERIENCE</button>
-                <div className="arrow-diamond">
+                <button className="enter-button">ENTER EXPERIENCE
+                <image className="arrow__right-alternate">
                   <DiamondWithRightArrow />
-                </div>
+                </image>
+                </button>
                 </Link>
               </div>
+
+
+
+
+
+
+    
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
             </div>
           </div>
         </div>

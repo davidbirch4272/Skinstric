@@ -197,38 +197,35 @@
 
     .enter-button {
     position: absolute;
-    bottom: 140px;
-    left: 40px;
+    top: 240px;
+    left: 50px;
     transform: rotate(45deg);
     font-size: 12px;
+    height: 18px; 
     background-color: white;
     border: none; 
+    cursor: pointer;
   } 
 
-
- .arrow-diamond {
+  .arrow__right-alternate {
     position: absolute;
-    top: 240px;
-    left: 140px;
+    top: -20px;
+    left: 130px;
+    font-size: 12px;
     margin-top: 10px;
-   
+    transform: rotate(45deg);
+    cursor: pointer;
   }  
 
-  .arrow-diamond:hover {
-  transform: scale(1.2);
-    transition: transform 0.3 ease;
-  }
- 
-.arrow__right {
-  transform: rotate(90deg);
-}
-
-  .enter-button:hover {
+  .arrow__right-alternate:hover {
   transform: scale(1.2) rotate(45deg);
   transition: transform 0.3s ease;
   }
-
-
+  
+  .enter-button:hover {
+  transform: rotate(45deg) scale(1.2);
+  transition: transform 0.3s ease;
+  }
 
   .dp_diamond-stack  {
     position: relative;
@@ -295,9 +292,9 @@
 
   .center-text {
   position: absolute;
-  left: 10px;
+  left: 50px;
   top: 40px;
-  transform: translate(0%, 0%) rotat(45deg);
+  transform: translate(0%, 0%) rotate(45deg);
   font-weight: 300;
   font-size: 30px;
   color: #1a1b1c;
@@ -306,12 +303,14 @@
   text-align: center;
   transition: transform 0.8s ease;
   z-index: 1;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   
   }
 
   .landing__bottom--para {
-    position: static;
+    position: absolute;
+    top: 30px;
+    left: 40px;
     margin-top: 60px;
     transform: rotate(45deg);
     font-size: 10px;
@@ -319,10 +318,10 @@
     
   }
 
-  .enter-button {
+   .enter-button {
     position: absolute;
-    bottom: 65px;
-    left: 9px;
+    top: 140px;
+    left: 10px;
     transform: rotate(45deg);
     font-size: 9px;
     background-color: white;
@@ -330,18 +329,25 @@
     cursor: pointer;
   }
 
-  .arrow-diamond {
+  .arrow__right-alternate {
     position: absolute;
-    top: 160px;
-    left: 80px;
+    top: -20px;
+    left: 90px;
     width: 20px;
-    transform: rotate(90deg) scale(0.5);
+    transform: rotate(45deg) scale(0.5);
     margin-top: 10px;
+    cursor: pointer;
   }
 
-  .enter-button:hover, .arrow-diamond:hover {
+  .arrow__right-alternate:hover {
+  transform: rotate(45deg) scale(0.7);
+  transition: transform 0.3s ease;
+}
+
+.enter-button:hover {
   transform: scale(1.2) rotate(45deg);
   transition: transform 0.3s ease;
+  
 }
 
   
