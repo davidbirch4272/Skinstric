@@ -228,21 +228,21 @@ transition: transform 0.3s ease;
 .left__diamond--para-dcws {
   position: absolute;
   left: 42px;   /*122 px*/
-  top: 517px;   /*486px*//* 687px */
+  top: 520px;   /*486px*//* 687px */
   transform: rotate(360deg)
 }
 
 .right__diamond--para-dcws {
   position: absolute;
-  right: 5px;  /*5px*//* 70 px*/
-  top: 516px;  /*486px*/ /* 687px */
+  right: 25px;  /*5px*//* 70 px*/
+  top: 520px;  /*486px*/ /* 687px */
   transform: rotate(360deg);
   
 }
 
 .arrow__right-dcws {
   position: absolute;
-  right: 20px;    /*20px*/  
+  right: 42px;    /*20px*/  
   top: 482px;     /*682 px*/
   transform: rotate(45deg);
 }
