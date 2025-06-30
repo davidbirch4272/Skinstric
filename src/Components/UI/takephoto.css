@@ -362,7 +362,8 @@ canvas {
   display: none;
 }
 
-@media (max-width: 891px) {
+@media (max-width: 1046px) {
+
   .arrow__left-tp {
     left: 5%;
     top: 75%;
@@ -377,9 +378,14 @@ canvas {
   z-index: 50;
 }
 
-  
+}
 
-   .instruction__d {
+
+
+
+@media (max-width: 891px) {
+
+  .instruction__d {
     right: 52px;
     top: 49%;
     font-size: 0.9rem;
