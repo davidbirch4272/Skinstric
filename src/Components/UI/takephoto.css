@@ -105,7 +105,7 @@
 .arrow__left-tp {
   position: absolute;
   left: 4%;
-  top: 80%;
+  top: 70%;
   transform: rotate(45deg);
   height: 50px;
   color: white;
@@ -121,7 +121,7 @@ transition: transform 0.3s ease;
 .left__diamond--para-tp {
   position: absolute;
   left: 9%;
-  top: 81%;
+  top: 71%;
   transform: rotate(360deg);
   color: white;
   z-index: 50;
@@ -376,23 +376,7 @@ canvas {
     font-size: 1.5rem;
   }
 
-  .arrow__left-tp {
-   position: fixed;
-   top: 55.5%;  /*55%*/
-   left: 50%;  /*50%*/
-   
   }
-
-  .left__diamond--para-tp {
-   position: fixed;
-   top: 62%;  /* 62% */
-   left: 50%;  /*7%*/
-  }
-
-
-
-
-}
 
 @media (max-width: 767px) {
   .instruction__item {
