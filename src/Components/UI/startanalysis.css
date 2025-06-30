@@ -212,14 +212,14 @@ textarea {
 .left__diamond--para-sa {
   position: absolute;
   left: 120px;
-  top: 605px;
+  top: 605px;   /* 605px    */
   transform: rotate(360deg)
 }
 
 .right__diamond--para-sa {
   position: absolute;
   right: 85px;
-  top:  613px;
+  top:  613px;  /* 613px    */
   transform: translate(-50%, -50%) rotate(360deg);
   
 }
@@ -234,7 +234,8 @@ textarea {
 
 @media (max-width: 767px) {
 
-.diamond {
+
+  .diamond {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -291,6 +292,38 @@ textarea {
   z-index: 1;
 }
 
+.arrow__left-sa {
+  position: absolute;
+  left: 65px;
+  top: 428px;
+  transform: rotate(45deg);
+  height: 50px;
+  
+}
+
+
+.left__diamond--para-sa {
+  position: absolute;
+  left: 120px;
+  top: 435px;   /* 605px    */
+  transform: rotate(360deg)
+}
+
+.right__diamond--para-sa {
+  position: absolute;
+  right: 85px;   /* 85 px    */
+  top:  445px;  /* 613px    */
+  transform: translate(-50%, -50%) rotate(360deg);
+  
+}
+
+.arrow__right-sa {
+  position: absolute;
+  right: 65px; /* 65px */
+  top: 428px;
+  transform: rotate(45deg);
+
+}
 
 
 
