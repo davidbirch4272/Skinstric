@@ -189,7 +189,7 @@ function TakePhoto({ stream, onPhotoCaptured, onDone, onCameraReady }) {
           <div className="analyze__image-overlay">
             <div className="half__container-tp--end">
               <div className="processing-state-tp">
-                <h1 className="click-tp">Processing submission...</h1>
+                <h1 className="click-tp">Analyzing Image</h1>
                 <div className="dots-tp">
                   <span>.</span>
                   <span>.</span>

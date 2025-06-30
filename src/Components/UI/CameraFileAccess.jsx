@@ -253,7 +253,7 @@ function CameraFileAccess() {
               <div className="diamond-cf inner--last-cf">
                 <div className="diamond__content-cf counter-spin-cf">
                   <p className="loading-text">
-                    Analyzing Image<span className="dots-cfa">...</span>
+                    Preparing your Analysis<span className="dots-cfa">...</span>
                   </p>
                 </div>
               </div>
