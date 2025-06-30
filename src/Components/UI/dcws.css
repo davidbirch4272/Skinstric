@@ -216,6 +216,16 @@ transition: transform 0.3s ease;
 @media (max-width: 767px) {
 
 
+.label_demographics-dcws-4 {
+    position: absolute;
+    top: 35px;  /*29px*/ /* 56px*/
+    left: 45px;  /*-9px*/
+    font-size: 16px;
+    transform: rotate(-45deg);
+    word-wrap: break-word;
+  }
+
+
 .arrow__left-dcws {
   position: absolute;
   left: 35px;  /* 65px*/
