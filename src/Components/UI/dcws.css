@@ -218,7 +218,7 @@ transition: transform 0.3s ease;
 
 .arrow__left-dcws {
   position: absolute;
-  left: 65px;
+  left: 35px;  /* 65px*/
   top: 480px;  /* 680px */
   transform: rotate(45deg);
   height: 50px;
@@ -227,22 +227,22 @@ transition: transform 0.3s ease;
 
 .left__diamond--para-dcws {
   position: absolute;
-  left: 122px;
-  top: 486px;   /* 687px */
+  left: 42px;   /*122 px*/
+  top: 517px;   /*486px*//* 687px */
   transform: rotate(360deg)
 }
 
 .right__diamond--para-dcws {
   position: absolute;
-  right: 70px;  /* 70 px*/
-  top: 486px;   /* 687px */
+  right: 5px;  /*5px*//* 70 px*/
+  top: 516px;  /*486px*/ /* 687px */
   transform: rotate(360deg);
   
 }
 
 .arrow__right-dcws {
   position: absolute;
-  right: 20px;
+  right: 20px;    /*20px*/  
   top: 482px;     /*682 px*/
   transform: rotate(45deg);
 }
