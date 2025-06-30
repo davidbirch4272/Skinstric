@@ -65,7 +65,7 @@ function CameraFileAccess() {
           setTimeout(() => {
             navigate("/variables");
           }, 1500);
-       
+        },0);
       };
 
       reader.readAsDataURL(selectedFile);
