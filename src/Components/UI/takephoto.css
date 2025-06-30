@@ -366,20 +366,19 @@ canvas {
 
   .arrow__left-tp {
     left: 5%;
-    top: 75%;
+    top: 73%;
   }
 
   .left__diamond--para-tp {
   position: absolute;
   left: 12%;
-  top: 77%;
+  top: 73%;
   transform: rotate(360deg);
   color: white;
   z-index: 50;
 }
 
 }
-
 
 
 
