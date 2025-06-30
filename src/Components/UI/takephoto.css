@@ -365,8 +365,19 @@ canvas {
 @media (max-width: 891px) {
   .arrow__left-tp {
     left: 5%;
-    top: 80%;
+    top: 75%;
   }
+
+  .left__diamond--para-tp {
+  position: absolute;
+  left: 12%;
+  top: 77%;
+  transform: rotate(360deg);
+  color: white;
+  z-index: 50;
+}
+
+  
 
    .instruction__d {
     right: 52px;
