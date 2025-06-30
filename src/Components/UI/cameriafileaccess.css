@@ -520,7 +520,7 @@ transition: transform 0.3s ease;
   right: 25px;
   color: black;
   font-size: 0.8rem;
-  max-width: 150px;
+  max-width: 50px;
   line-height: 1.2;
   font-weight: normal;
   transform: rotate(180deg);
