@@ -362,26 +362,6 @@ canvas {
   display: none;
 }
 
-@media (max-width: 1046px) {
-
-  .arrow__left-tp {
-    left: 5%;
-    top: 72%;
-  }
-
-  .left__diamond--para-tp {
-  position: absolute;
-  left: 12%;
-  top: 73%;
-  transform: rotate(360deg);
-  color: white;
-  z-index: 50;
-}
-
-}
-
-
-
 @media (max-width: 891px) {
 
   .instruction__d {
