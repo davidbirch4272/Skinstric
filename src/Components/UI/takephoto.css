@@ -420,8 +420,8 @@ canvas {
 
   .left__diamond--para-tp {
    position: fixed;
-   top: 61%;
-   left: 6%;
+   top: 62%;  /* 61% */
+   left: 7%;  /*6%*/
   }
 
 .analyze__image-overlay {
