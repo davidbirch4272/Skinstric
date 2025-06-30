@@ -59,12 +59,13 @@ function CameraFileAccess() {
           console.error("Upload error:", error.message);
         }
 
+        setFileLoading(true);
+        
         setTimeout(() => {
-          setFileLoading(true);
           setTimeout(() => {
             navigate("/variables");
           }, 1500);
-        }, 500);
+       
       };
 
       reader.readAsDataURL(selectedFile);
