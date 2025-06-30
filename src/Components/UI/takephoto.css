@@ -375,6 +375,21 @@ canvas {
     top: 50%;
     font-size: 1.5rem;
   }
+
+  .arrow__left-tp {
+   position: fixed;
+   top: 55.5%;
+  
+  }
+
+  .left__diamond--para-tp {
+   position: fixed;
+   top: 62%;  /* 61% */
+   left: 7%;  /*6%*/
+  }
+
+
+
 }
 
 @media (max-width: 767px) {
