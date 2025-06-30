@@ -526,6 +526,21 @@ transition: transform 0.3s ease;
   transform: rotate(180deg);
 }
 
+.arrow__left-cf {
+  position: absolute;
+  left: 15px;   /*65px*/
+  top: 295px;   /*595px*/
+  transform: rotate(45deg);
+  height: 50px;
+}
+.left__diamond--para-cf {
+  position: absolute;
+  left: 20px;   /*120px*/
+  top: 340px;   /*605px*/
+  transform: rotate(360deg);
+}
+
+
 
 }
 
