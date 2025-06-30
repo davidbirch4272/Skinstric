@@ -4,6 +4,7 @@ import { GoDiamond } from "react-icons/go";
 import DiamondWithLeftArrowWhite from "./DiamondWithLeftArrowWhite";
 import { Link, useNavigate } from "react-router-dom";
 import { MdCamera } from "react-icons/md";
+import { apiFetch } from '../../ApiCheck.js';
 
 function TakePhoto({ stream, onPhotoCaptured, onDone, onCameraReady }) {
   const videoRef = useRef(null);
@@ -87,7 +88,10 @@ function TakePhoto({ stream, onPhotoCaptured, onDone, onCameraReady }) {
 
     try {
       const response = await fetch(
-        "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo",
+       `${process.env.REACT_APP_API_PHASE_TWO}`,
+       
+     //   "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo",
+       
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

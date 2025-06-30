@@ -5,6 +5,7 @@ import { MdCamera } from "react-icons/md";
 import { ImFilePicture } from "react-icons/im";
 import { Link, useNavigate } from "react-router-dom";
 import "./cameriafileaccess.css";
+import { apiFetch } from '../../ApiCheck.js';
 
 function CameraFileAccess() {
   const [photoData, setPhotoData] = useState(null);
@@ -34,7 +35,11 @@ function CameraFileAccess() {
 
         try {
           const response = await fetch(
-            "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo",
+            `${process.env.REACT_APP_API_PHASE_TWO}`, 
+            
+            //"https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo",
+            
+            
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },

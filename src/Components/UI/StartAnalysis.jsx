@@ -5,6 +5,7 @@ import DiamondWithLeftArrow from "./DiamondWithLeftArrow";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { apiFetch } from '../../ApiCheck.js';
 
 function StartAnalysis() {
   const [step, setStep] = useState(1);
@@ -57,7 +58,10 @@ function StartAnalysis() {
 
       try {
         const response = await fetch(
-          "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne",
+          `${process.env.REACT_APP_API_PHASE_ONE}`, 
+          
+         // "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne",
+          
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

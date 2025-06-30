@@ -5,6 +5,7 @@
   import DiamondWithRightArrow from "./DiamondWithRightArrow";
   import DiamondWithLeftArrow from "./DiamondWithLeftArrow";
   import { Link } from "react-router-dom";
+  import { apiFetch } from '../../ApiCheck.js';
 
   function Results() {
     const [activeType, setActiveType] = useState("ethnicity");
