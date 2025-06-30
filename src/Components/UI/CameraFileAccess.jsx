@@ -63,7 +63,7 @@ function CameraFileAccess() {
           setFileLoading(true);
           setTimeout(() => {
             navigate("/variables");
-          }, 1500);
+          }, 500);
         }, 2);
       };
 
