@@ -535,7 +535,7 @@ transition: transform 0.3s ease;
 }
 .left__diamond--para-cf {
   position: absolute;
-  left: 20px;   /*120px*/
+  left: 22px;   /*120px*/
   top: 340px;   /*605px*/
   transform: rotate(360deg);
 }
