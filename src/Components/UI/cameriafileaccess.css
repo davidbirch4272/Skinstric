@@ -504,5 +504,28 @@ transition: transform 0.3s ease;
     max-width: 120px;
     line-height: 1.2;
   }
+
+.scanline-2 {
+  bottom: -20px;
+  left: -110px;
+  transform: rotate(180deg);
+}
+
+
+
+
+  .scanline__para-2 {
+  position: relative;
+  bottom: 30px;
+  right: 25px;
+  color: black;
+  font-size: 0.8rem;
+  max-width: 150px;
+  line-height: 1.2;
+  font-weight: normal;
+  transform: rotate(180deg);
+}
+
+
 }
 
