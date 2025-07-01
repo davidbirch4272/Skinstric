@@ -35,10 +35,7 @@ function CameraFileAccess() {
 
         try {
           const response = await fetch(
-            `${process.env.REACT_APP_API_PHASE_TWO}`, 
-            
-            //"https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo",
-            
+            "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo",           
             
             {
               method: "POST",

@@ -58,11 +58,9 @@ function StartAnalysis() {
 
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_API_PHASE_ONE}`, 
-          
-         // "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne",
-          
-          {
+           "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne",            
+      
+         {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updatedData),
