@@ -191,7 +191,7 @@ background-color: rgba(114, 96, 96, 0.411);
   border: 2px solid black;
   border-radius: 50%;
   position: relative;
-  background: conic-gradient(#000 0% 75%, transparent 75% 100%);
+  background: transparent;
 }
 
 .circle-text {
