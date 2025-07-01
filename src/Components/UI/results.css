@@ -404,6 +404,7 @@ background-color: rgba(114, 96, 96, 0.411);
   position: absolute;
   left: 75px;
   top: 605px;
+  color: #1a1b1c;
   transform: rotate(360deg)
 }
 
@@ -411,6 +412,7 @@ background-color: rgba(114, 96, 96, 0.411);
   position: absolute;
   right: 90px;
   top: 613px;
+  color: #1a1b1c;
   transform: translate(-50%, -50%) rotate(360deg);
   
 }

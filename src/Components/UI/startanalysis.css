@@ -84,8 +84,8 @@
 
 .diamond__content {
   position: absolute;     
-  top: 170px;               
-  left: 70px;              
+  top: 135px;               
+  left: 40px;              
   transform: translate(-50%, -50%);  
   transform-origin: center center;
   width: 80%;             
@@ -139,7 +139,7 @@
 .input__name {
 border: none;
 border-bottom: 1px solid gray;
-font-size: 14px;
+font-size: 40px;
 font-weight: 400;
 width: 100%;
 text-align: center;
@@ -213,6 +213,7 @@ textarea {
   position: absolute;
   left: 120px;
   top: 605px;   /* 605px    */
+  color: #1a1b1c;
   transform: rotate(360deg)
 }
 
@@ -220,6 +221,7 @@ textarea {
   position: absolute;
   right: 85px;
   top:  613px;  /* 613px    */
+  color: #1a1b1c;
   transform: translate(-50%, -50%) rotate(360deg);
   
 }

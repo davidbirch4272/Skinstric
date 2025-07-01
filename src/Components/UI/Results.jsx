@@ -78,6 +78,18 @@
       return "#ccc";
     };
 
+
+const [donutSize, setDonutSize] = useState(360);
+
+useEffect(() => {
+  const updateSize = () => {
+    setDonutSize(window.innerWidth < 500 ? 310 : 360);
+  };
+  updateSize(); 
+  window.addEventListener("resize", updateSize);
+  return () => window.removeEventListener("resize", updateSize);
+}, []);
+
     const currentSelection =
       activeType === "ethnicity"
         ? selectedEthnicity
@@ -127,7 +139,7 @@
                 percentage={currentSelection.percentage}
                 progressColor={getProgressColor(currentSelection.percentage)}
                 backgroundColor="#e0e0e0"
-                size={360}
+                size={donutSize}
                 strokeWidth={4}
               />
             </div>

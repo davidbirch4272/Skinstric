@@ -537,6 +537,7 @@ transition: transform 0.3s ease;
   position: absolute;
   left: 22px;   /*120px*/
   top: 340px;   /*605px*/
+  color: #1a1b1c;
   transform: rotate(360deg);
 }
 
